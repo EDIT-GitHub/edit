@@ -1,0 +1,30 @@
+@media screen and (max-width:1035px){
+	.js-iso-module{
+		.grid-cont{
+			//max-width:750px;
+		}
+	}
+	
+}
+@media screen and (max-width:785px){
+	.js-iso-module{
+		.grid-cont{
+			//width:500px;
+		}
+	}
+	
+}
+@media screen and (max-width:535px){
+	.js-iso-module{
+		.grid-cont{
+			width:calc(100% - 20px);
+		}
+	}
+	
+}
+@media screen and (max-width:500px){
+	.margin-100{
+		margin-bottom:50px;
+	}
+	
+}

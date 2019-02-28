@@ -1,0 +1,184 @@
+.btn-icon{
+	width:30px;
+	height:30px;
+
+	cursor:pointer;
+	.inner{
+		width:30px;
+		height:30px;
+			background-color:#ffdf00;
+	border-radius:15px;
+-webkit-transition: transform 300ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+-webkit-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+   -moz-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+     -o-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+        transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); /* custom */
+	transform:scale(0.2);
+		svg{
+				opacity:1!important;
+				display:block!important;
+				-webkit-transition: transform 300ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+-webkit-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+   -moz-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+     -o-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+        transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); /* custom */
+				transform:scale(0);
+			}
+	}
+
+	&:hover{
+		.inner{
+			transform: scale(1);
+			svg{
+				transform:scale(1);
+			}
+		}
+	}
+}
+.default-btn{
+	border:2px solid #b2b2b2;
+	height:40px;
+	background-color:transparent;
+	padding:0 10px;
+	position:relative;
+	cursor:pointer;
+	.label{
+		@include robotoBoldCond;
+		font-size:15px;
+		line-height: 40px;
+		color:#000;
+		display: inline;
+		text-transform: uppercase;
+	}
+	.btn-icon{
+		display: inline-block;
+		position:absolute;
+		right:10px;
+		top:3px;
+		.inner{
+			svg{
+				opacity:1!important;
+				display:block!important;
+				-webkit-transition: transform 300ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+-webkit-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+   -moz-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+     -o-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+        transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); /* custom */
+				transform:scale(0);
+			}
+		}
+	}
+	&:hover{
+		.inner{
+			transform: scale(1);
+			svg{
+				transform:scale(1);
+			}
+		}
+	}
+	&.no-hover{
+		.inner{
+			transform:scale(1);
+		}
+	}
+}
+#menu-btn{
+	width:30px;
+	height:24px;
+	position:fixed;
+	top:32px;
+	right:30px;
+	z-index:9999;
+	cursor:pointer;
+	transform:matrix(1,0,0,1,0,0);
+	transition:transform 0.3s;
+	transition-delay:0.15s;
+	backface-visibility:hidden;
+	&.collapsed{
+		transition-delay: 0;
+		transform: matrix(1,0,0,1,0,-3);
+		&.no-collapse{
+			transition-delay: 0.5s;
+			transform: matrix(1,0,0,1,0,0);
+		}
+	}
+	.top-bar,.medium-bar,.bottom-bar{
+		width:30px;
+		height:4px;
+		background-color:#FFFFFF;
+		position: absolute;
+
+	}
+	.top-bar{
+		transition:all 0.2s;
+		top:0;
+	}
+	.medium-bar{
+		transition:all 0.2s;
+
+		top:10px;
+		left:0;
+	}
+	.bottom-bar{
+		transition:all 0.2s;
+		top:20px;
+	}
+	
+	&:not(.no-hover){
+		&:hover{
+			.top-bar{
+				
+			}
+			.medium-bar{
+				left:3px;
+				background-color: #ffdf00;
+				border-radius:0;
+				right:auto;
+				
+			}
+			.bottom-bar{
+			}
+
+		}
+		&.active{
+			.medium-bar{
+				right:-5px;
+				left: auto;
+				width:5px;
+				height:5px;
+				border-radius:5px;
+				background-color: #ffdf00;
+			}
+			.top-bar{
+				transform:rotate(45deg);
+				transition-delay: 0.2s;
+				top:10px;
+			}
+			.bottom-bar{
+				transform:rotate(-45deg);
+				transition-delay: 0.2s;
+				top:10px;
+			}
+		}
+	}
+	&.active{
+		.medium-bar{
+			right:-5px;
+			left: auto;
+			width:5px;
+			height:5px;
+			border-radius:5px;
+			background-color: #ffdf00;
+		}
+		.top-bar{
+			transform:rotate(45deg);
+			transition-delay: 0.2s;
+			top:10px;
+		}
+		.bottom-bar{
+			transform:rotate(-45deg);
+			transition-delay: 0.2s;
+			top:10px;
+		}
+	}
+}

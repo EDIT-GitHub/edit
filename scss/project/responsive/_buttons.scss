@@ -1,0 +1,9 @@
+@media screen and (max-width:600px){
+	#menu-btn{
+		top:14px;
+		right:10px;
+		&.collapsed{
+			transform: matrix(1,0,0,1,0,0);
+		}
+	}
+}

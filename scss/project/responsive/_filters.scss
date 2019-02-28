@@ -1,0 +1,213 @@
+@media screen and (max-width:1024px){
+
+	.filters{
+		.filter-btn{
+			display:block;
+			width:calc(100% - 20px);
+		}
+	}
+	.filters-holder{
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		z-index:9998;
+		background-color:#f2f2f2;
+		display:none;
+		.responsive-header{
+			background-color:#000000;
+			height:140px;
+			padding-top:60px;
+			display: block;
+			margin-bottom:100px;
+			padding-left:30px;
+			padding-right:30px;
+			position:relative;
+			cursor:pointer;
+			&:hover{
+				.icon-cont{
+					transform: scale(1);
+					.icon{
+						transform: scale(1) rotate(45deg);
+					}
+				}
+			}
+			.label{
+				color:#ffdf00;
+				@include robotoBoldCond;
+				font-size:15px;
+				line-height:80px;
+				text-transform:uppercase;
+			}
+			.icon-cont{
+				width:30px;
+				height:30px;
+				background-color:#ffdf00;
+				position:absolute;
+				right:30px;
+				top:85px;
+				border-radius:15px;
+				-webkit-transition: transform 300ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+				-webkit-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+				   -moz-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+				     -o-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+				        transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); /* custom */
+				transform: scale(0.2);
+				.icon{
+					-webkit-transition: transform 300ms cubic-bezier(1.000, 0, 0.000, 1); /* older webkit */
+					-webkit-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+					   -moz-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+					     -o-transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); 
+					        transition: transform 300ms cubic-bezier(1.000, -0.125, 0.000, 1.470); /* custom */
+        			transform-origin:50% 15px;
+					transform: scale(0) rotate(45deg);
+					svg{
+						opacity:1;
+					}
+				}
+			}
+		}
+		.filter{
+			height:60px;
+			.multifilter-container{
+				width:calc(100% - 60px);
+				margin:0 auto;
+				transition:all 0.0s;
+				.lists-container{
+					top:140px;
+					max-height:none;
+					height: calc(100% - 140px);
+					transition-duration: 0.0s!important;
+					opacity:0!important;
+					position:fixed;
+				}
+				
+				left:0;
+				right:0;
+				top:0;
+				&.active{
+					top:70px!important;
+					left:0;
+					right:0;
+					width:100%;
+					position:absolute;
+					.lists-container{
+						opacity:1!important;
+					}
+					.multiselect-header{
+						border:none;
+					}
+					.multiselect-label{
+						padding-left:30px;
+					}
+					.optgroup-container{
+						ul{
+							li {
+								padding-left:30px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:1020px){
+	.filters-holder{
+
+		.responsive-header{
+			&:hover{
+				.icon-cont{
+					.icon{
+						
+					}
+				}
+			}
+			.label{
+
+			}
+			.icon-cont{
+
+				.icon{
+
+					svg{
+						display:block;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:600px){
+	.filters{
+		.filter-btn{
+			height:50px;
+			.label{
+				line-height:50px;
+			}
+			.btn-icon{
+				top:9px;
+			}
+		}
+	}
+	.filters-holder{
+		.filter{
+			height:50px;
+		}
+		.responsive-header{
+			padding-left:10px;
+			padding-right:10px;
+			margin-bottom:50px;
+			height:120px;
+			padding-top:60px;
+			.label{
+				line-height: 60px;
+			}
+			.icon-cont{
+				right:10px;
+				top:76px;
+			}
+		}
+		.filter{
+			height:50px;
+			.multifilter-container{
+				width:calc(100% - 20px);
+				&.active{
+					top:75px!important;
+					.multiselect-label{
+						padding-left:10px;
+					}
+					.optgroup-container{
+						ul{
+							li{
+								padding-left:10px;
+								padding-right:10px;
+							}
+						}
+					}
+					.multiselect-icon{
+						right:10px;
+					}
+				}
+				.multiselect-header{
+					max-height:50px;
+				}
+				.multiselect-label{
+					line-height: 50px;
+				}
+				.multiselect-icon{
+					top:10px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:500px){
+	.filters{
+		.filter-btn{
+			width:100%;
+		}
+	}
+}
+

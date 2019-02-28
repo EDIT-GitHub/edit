@@ -1,0 +1,101 @@
+//font-face Example
+
+
+@font-face{
+font-family:"Neuzeit S LT W01 Book";
+src:url("../css/fonts/840b8bdf-7d26-449a-9620-8cb6663f18cc.eot?#iefix");
+src:url("../css/fonts/840b8bdf-7d26-449a-9620-8cb6663f18cc.eot?#iefix") format("eot"),
+    url("../css/fonts/d741af6b-26f4-4e34-b55d-432ccade3280.woff2") format("woff2"),
+    url("../css/fonts/77aaeb7b-86f4-47a1-8196-74a660dd0919.woff") format("woff"),
+    url("../css/fonts/efdf74e6-bfd4-466d-93fd-4f8f4d55b80c.ttf") format("truetype"),
+    url("../css/fonts/be8d3917-a4cf-4d8f-b767-4e84bcbe300c.svg#be8d3917-a4cf-4d8f-b767-4e84bcbe300c") format("svg");
+}
+@font-face{
+font-family:"NeuzeitSLTW01-BookHeavy";
+src:url("../css/fonts/74c31844-4217-4fe8-82f7-88a5075de2e8.eot?#iefix");
+src:url("../css/fonts/74c31844-4217-4fe8-82f7-88a5075de2e8.eot?#iefix") format("eot"),
+    url("../css/fonts/3da0a3e3-3dff-405c-a0b2-0b0050b21771.woff2") format("woff2"),
+    url("../css/fonts/a1476bae-b118-4e9d-b711-c84091d9bc16.woff") format("woff"),
+    url("../css/fonts/096111d9-3ba2-4828-ae9a-29fb4e03c0b1.ttf") format("truetype"),
+    url("../css/fonts/74a8e701-bffc-464e-a60b-63169debd492.svg#74a8e701-bffc-464e-a60b-63169debd492") format("svg");
+}
+
+@font-face {
+    font-family: 'robotoRegular';
+    src: url('../css/fonts/roboto-regular-webfont.eot');
+    src: url('../css/fonts/roboto-regular-webfont.svg#robotoRegular') format('svg'),
+         url('../css/fonts/roboto-regular-webfont.woff') format('woff'),
+         url('../css/fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('../css/fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'robotoRegularCond';
+        src: url('../css/fonts/RobotoCondensed-Regular-webfont.eot');
+    src: url('../css/fonts/RobotoCondensed-Regular-webfont.svg#robotoBold') format('svg'),
+         url('../css/fonts/RobotoCondensed-Regular-webfont.woff') format('woff'),
+         url('../css/fonts/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
+         url('../css/fonts/RobotoCondensed-Regular-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'robotoBold';
+    src: url('../css/fonts/roboto-bold-webfont.eot');
+    src: url('../css/fonts/roboto-bold-webfont.svg#robotoRegular') format('svg'),
+         url('../css/fonts/roboto-bold-webfont.woff') format('woff'),
+         url('../css/fonts/roboto-bold-webfont.ttf') format('truetype'),
+         url('../css/fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'robotoBoldCond';
+    src: url('../css/fonts/RobotoCondensed-Bold-webfont.eot');
+    src: url('../css/fonts/RobotoCondensed-Bold-webfont.svg#robotoBold') format('svg'),
+         url('../css/fonts/RobotoCondensed-Bold-webfont.woff') format('woff'),
+         url('../css/fonts/RobotoCondensed-Bold-webfont.ttf') format('truetype'),
+         url('../css/fonts/RobotoCondensed-Bold-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'robotoLight';
+    src: url('../css/fonts/roboto-light-webfont.eot');
+    src: url('../css/fonts/roboto-light-webfont.svg#robotoLight') format('svg'),
+         url('../css/fonts/roboto-light-webfont.woff') format('woff'),
+         url('../css/fonts/roboto-light-webfont.ttf') format('truetype'),
+         url('../css/fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@mixin fontNeuHeavy() {
+	font-family:'NeuzeitSLTW01-BookHeavy';
+	font-weight:300;
+}
+@mixin fontNeu() {
+	font-family:'Neuzeit S LT W01 Book';
+	font-weight:300;
+}
+@mixin robotoRegular() {
+	font-family:'robotoRegular';
+	font-weight:300;
+}
+@mixin robotoRegularCond() {
+    font-family:'robotoRegularCond';
+    font-weight:300;
+}
+@mixin robotoBoldCond() {
+	font-family:'robotoBoldCond';
+	font-weight:300;
+}
+@mixin robotoLight() {
+	font-family:'robotoLight';
+	font-weight:300;
+}

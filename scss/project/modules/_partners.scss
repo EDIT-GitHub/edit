@@ -1,0 +1,52 @@
+.partners-module{
+	text-align:center;
+	.grid-cont{
+		margin:0 auto;
+		padding:50px 10px 0 10px;
+		font-size:0;
+		text-align:center;
+		overflow: hidden;
+		.module-title{
+			&.partners{
+				height:auto;
+				min-height: 0px;
+				span{
+					@include robotoBoldCond;
+					font-size:11px;
+					line-height: 10px;
+					color:#919191;
+					text-transform: uppercase;
+					display: block;
+					margin-bottom:10px;
+				}
+				.square{
+					display: inline-block;
+					height:40px;
+					margin-bottom:10px;
+					svg{
+						display: inline-block;
+						width:40px;
+					}
+				}
+				h2{
+					font-size:18px;
+					color:#919191;
+					line-height:20px;
+					background-color: #FFF;
+					display: inline-block;
+					left:20px;
+					top:10px;
+				}
+			}
+		}
+		.grid-1-8{
+			max-width:125px;
+			display:inline-block;
+			img{
+				width:100%;
+				height:auto;
+				display: block;
+			}
+		}
+	}
+}

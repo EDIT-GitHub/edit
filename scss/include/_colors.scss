@@ -1,0 +1,90 @@
+
+//COLORS
+
+//Change variable values for diferent colors in each type
+
+
+//Text-Boxes 
+$txtBoxTitle: #DB3A33; //Blue -- Proderma  Orange -- Oasis
+$txtBoxTagBg: #DB3A33;	//Blue -- Proderma Orange -- Oasis
+$txtBoxTagTxt: #FFFFFF;	//white
+$txtBoxTxt: #FFFFFF; //white
+$txtBoxBgTranslucent: rgba(0,0,0,0.7); //Black with opacity
+$txtBoxBgColor1: #F6F6F6; //Gray 
+$txtBoxBgColor2: #FFFFFF;
+$txtBoxDarkerTitle: #9F2B25;
+//Header 
+$headerBottomOption: #FFFFFF; //Dark Blue - Used in Header
+$headerBottomOptionHover: #DB3A33; //Light Blue 
+$headerTopOption: #FFFFFF; //Dark Gray  - Used in Header, Footer
+
+//submenu
+$submenuHeaders:#DB3A33; // Orange -- Oasis || Blue -- Proderma
+$submenuSubHeaders:#333333;
+$submenuSubItems:#666666;
+$submenuSubItemsHover:rgba(229,229,229,0.7);
+
+$submenuResponsiveOdd:#DB3A33; //Orange - Oasis || Blue -- Proderma
+$submenuResponsiveEven:#9F2B25;
+
+//Footer
+$footerBackgroundColor1: #222222; //White transparent
+$footerListBullets: #FFFFFF; //Dark Gray
+$footerNavigationOptions: #FFFFFF; //Dark Blue
+
+//Highlight
+$highlightBackgroundColor1: #F2F2F2; //Highlight  gray BG 
+$highlightBackgroundColor2: #DB3A33; //Highlight blue BG -- Proderma || Highlight Orange BG -- Oasis
+$highlightIconBg: rgba(255,255,255,0.2); //Highlight Icon gray BG
+$highlightText: #FFFFFF; //White
+$highlightSearch: #EEEEEE; //Light Gray
+
+//homeHighlightGama Gradient Colors
+$gradientGamaFrom:rgba(179, 32, 33, 1);
+$gradientGamaTo:rgba(198, 44, 40, 1);
+$gradientGamaFromIE:#B32021;
+$gradientGamaToIE:#C62C28;
+
+//Produtos Filter Blocks Gradient Colors
+$gradientProdutoFrom:rgba(246,246,246,1);
+$gradientProdutoTo:rgba(255,255,255,1);
+$gradientProdutoHoverFrom:rgba(219, 58, 51, 1);
+$gradientProdutoHoverTo:rgba(219, 58, 51, 1);
+$gradientProdutoFromIE:'#f6f6f6';
+$gradientProdutoToIE:'#FFF';
+$gradientProdutoHoverFromIE:'#DB3A33';
+$gradientProdutoHoverToIE:'#FFF';
+
+//Tags 
+$tagForm: #DB3A33; //Blue -- Proderma || Orange -- Oasis
+$tagShadow: rgba(0,24,78,0.3); //Black with tagForm behind 
+$tagMapBackGround: #9F2B25;
+//Borders 
+$borderColor1: #F1F1F1; //Gray
+$footerBorder: rgba(0,0,0,0.3); //Gray with opacity
+$borderBlog: #EEEEEE; //Blog Border
+
+//Text template 
+$txtTitle: #333333; //Dark Gray 
+$txtParagraph: #333333; //Light Gray 
+$txtLightParagraph: #999999; //SUPER MEGA UNREADABLE LIGHT TEXT!!
+$txtOrange: #DB3A33; // Orange -- Oasis || Blue -- Proderma
+$txtDescBlogTitle: #666666; //Light Gray
+
+//Icons 
+$iconId: #DB3A33; //Orange -- Oasis || Blue -- Proderma 
+$detailIconBg: rgba(0,0,0,0.1); //Gray Background 
+$detailIconBgIngredient: rgba(0,0,0,0.8); //Dark Gray Babackground
+$highlightIconBgRevistas: rgba(0,0,0,0.7);
+$iconBg: #FFFFFF; //white - Used in Header, Footer
+$iconShadow: rgba(0,0,0,0.2); //Black transparent - Used in Header, Footer
+$searchIconSvgColor: #DCDCDC; //Gray
+$svgStandard : #DB3A33; //Orange -- Oasis || Blue -- Proderma 
+//Conselhos 
+$conselhosBg: rgba(204,204,204,0.2);
+
+
+//Slider 
+$bullets: #DB3A33; // Blue - Proderma
+
+$svgFill: #DB3A33;

@@ -1,0 +1,49 @@
+// Core
+@import "core/_mixins";
+@import "core/_eases";
+@import "core/_helper";
+@import "core/_reset";
+@import "core/_variables";
+@import "core/_cmarDD";
+
+//Include
+@import "include/_fonts";
+@import "include/_colors";
+@import "include/_grid";
+@import "include/_main";
+@import "include/_texttype";
+@import "include/_massivePlay";
+
+//Plugins
+@import "plugins/_multifilter"; 
+
+//Project
+@import "project/_main"; 
+@import "project/_buttons"; 
+@import "project/_filters"; 
+@import "project/_footer"; 
+@import "project/_menu"; 
+@import "project/_slider"; 
+@import "project/_blocks";
+
+
+@import "project/modules/_modules"; 
+@import "project/modules/_agenda"; 
+@import "project/modules/_latestnews"; 
+@import "project/modules/_partners";
+@import "project/modules/_equipa";
+@import "project/modules/_map";
+
+//Responsive
+@import "project/responsive/_main"; 
+@import "project/responsive/_buttons";
+@import "project/responsive/_filters";
+@import "project/responsive/_footer";
+@import "project/responsive/_menu";  
+@import "project/responsive/_slider";
+@import "project/responsive/_blocks";
+
+@import "project/modules/responsive/_modules"; 
+@import "project/modules/responsive/_partners"; 
+@import "project/modules/responsive/_equipa"; 
+@import "project/modules/responsive/_map"; 

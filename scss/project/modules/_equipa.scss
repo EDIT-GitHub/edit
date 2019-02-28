@@ -1,0 +1,39 @@
+.equipa{
+	&.filtered{
+		.stamp{
+			position: absolute;
+			right:0;
+		}
+		.module-title{
+			padding-left: 40px;
+			padding-right:40px;
+			-webkit-touch-callout: none;
+		    -webkit-user-select: none;
+		    -khtml-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+			.title-cont{
+				top:0;
+				transform: none;
+				position:relative;
+				margin-bottom: 20px;
+				margin-top: -70px;
+			}
+			h2{
+				color:#FFF;
+				display: inline;
+				background-color:#000;
+				line-height:68px;
+				box-shadow:10px 0 0 #000,-10px 0 0 #000;
+				left: 10px;
+			}
+		}
+		.filters-holder{
+			.filter{
+				width:100%;
+				margin-bottom:8px;
+			}
+		}
+	}
+}

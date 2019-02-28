@@ -1,0 +1,180 @@
+.multifilter-container{
+    position:relative;
+    select{
+        position:absolute;
+        width:1px;
+        height:1px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border:0;
+        outline:0;
+        opacity:0;
+    }
+    &.active{
+        .multiselect-total-selected{
+            color:#FFFFFF;
+        }
+        .multiselect-icon{
+            @include rotate(-180deg); 
+            
+        }
+    }
+    .multiselect-header{
+        border:3px solid #FFF;
+        border-radius:5px;
+        cursor:pointer;
+        &:hover{
+            background-color:#FFFFFF;
+        }
+        &.active{
+            background-color:#660078;
+            border-color:#660078;
+            border-bottom-right-radius:0;
+            border-bottom-left-radius:0;
+            .multiselect-label{
+                color:#FFF;
+            }
+        }
+    }
+    .multiselect-label{
+        line-height:43px;
+        display: inline-block;
+        font-size:13px;
+        font-family:Arial;
+        font-weight: bold;
+        text-transform: uppercase;
+        
+        padding:0 10px;
+        cursor:pointer;
+         
+    }
+    .multiselect-icon{
+    }
+    .multiselect-total-selected{
+        position:relative;
+        line-height:44px;
+        font-family:Arial;
+        font-weight: bold;
+        font-size:13px;
+    }
+    .lists-container{
+        position:absolute;
+        width: 100%;
+        z-index:9;
+        border-bottom-right-radius:5px;
+        border-bottom-left-radius: 5px;
+        overflow: hidden;
+        //overflow-y: scroll;
+        max-height: 250px;  
+        opacity:0;
+        display: none;
+        background-color:#FFF;
+        .iScrollVerticalScrollbar{
+            width:5px!important;
+            right:2px!important;
+            .iScrollIndicator{
+                border:none!important;
+                background-color: #333;
+                background-color:rgba(0,0,0,0.7);
+            }
+        }
+    }
+    .optgroup-container{
+        height: auto;
+        position:relative;
+        padding:0 10px;
+        .optgroup-header{
+            border-bottom:1px solid #eaeaea;
+            cursor:pointer;
+            &.active{
+                .optgroup-header-icon{ 
+                    @include rotate(-180deg); 
+                }
+            }
+        }
+        .optgroup-header-icon{
+            width:20px;
+            height:20px;
+            position:absolute;
+            background: url(/images/svg/drop-icon-small.svg);
+            top:15px;
+            right:10px;
+        }
+        .optgroup-label{ 
+            line-height:50px;
+            font-family:Arial;
+            font-weight: bold;
+            font-size:13px;
+            text-transform: uppercase;
+            cursor:pointer;
+            display: inline-block;
+            vertical-align:middle;
+            padding:0 0 0 0px;
+        }
+        .optgroup-total-selected{
+            position:relative;
+            font-family:Arial;
+            font-weight: bold;
+            font-size:13px;
+            line-height:50px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        ul{
+            margin:0;
+            padding:0 0px;
+            position:relative;
+            list-style:none;
+            overflow:hidden;
+            height:0px;
+            background-color:#FFF;
+            li{
+                cursor:pointer;
+                height:50px;
+                line-height: 50px;
+                font-family:Arial;
+                font-weight: normal;
+                font-size:13px;
+                padding:0 30px 0 10px;
+                border-bottom:1px solid #eaeaea;
+                position:relative;
+                &.list-clear{
+                    border-bottom:0;
+                    height:0;
+                    overflow: hidden;
+                    position:relative;
+                    .list-clear-icon{ 
+                        width:20px;
+                        height:20px;
+                        position:absolute;
+                        background: url(/images/svg/clear-droplist.svg) 0 0 no-repeat;
+                        top:15px;
+                        right:10px;
+                    }
+                    &.active{
+                        border-bottom:1px solid #eaeaea;
+                        color:#000;
+                    }
+                }
+                .mark{
+                    position:absolute;
+                    right:10px;
+                    width:20px;
+                    height:20px;
+                    border:1px solid #CCC;
+                    border-radius:4px;
+                    top:15px;
+                }
+                &.active{
+                    color:#660078;
+                    .mark{
+                        background:url(/images/svg/checkbox.svg) 0 0 no-repeat;
+                        background-size: 16px 20px;
+                        background-position: 2px 0px
+                    }
+                }
+            }
+        }
+    }
+}

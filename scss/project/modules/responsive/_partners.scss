@@ -1,0 +1,27 @@
+@media screen and (max-width:768px){
+	.partners-module{
+		.grid-cont{
+			.grid-1-8{
+				width:16.66%;
+			}
+		}
+	}
+}
+@media screen and (max-width:600px){
+	.partners-module{
+		.grid-cont{
+			.grid-1-8{
+				width:20%;
+			}
+		}
+	}
+}
+@media screen and (max-width:500px){
+	.partners-module{
+		.grid-cont{
+			.grid-1-8{
+				width:33.33%;
+			}
+		}
+	}
+}

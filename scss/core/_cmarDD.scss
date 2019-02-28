@@ -1,0 +1,170 @@
+/* Styles for custom selects */
+.done select{
+	height:1px;
+	width:1px;
+	border:none;
+	background:none;
+	padding:0;
+	margin:0;
+	position: relative;
+	left:-2px;
+	z-index: -10;
+	outline:none;
+	-webkit-appearance: none;
+}
+.mobile select {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	background-origin: padding-box;
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: auto auto;
+	border-bottom-color: -moz-use-text-color;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	border-image-outset: 0 0 0 0;
+	border-image-repeat: stretch stretch;
+	border-image-slice: 100% 100% 100% 100%;
+	border-image-source: none;
+	border-image-width: 1 1 1 1;
+	border-left-color-ltr-source: physical;
+	border-left-color-rtl-source: physical;
+	border-left-color-value: -moz-use-text-color;
+	border-left-style-ltr-source: physical;
+	border-left-style-rtl-source: physical;
+	border-left-style-value: none;
+	border-left-width-ltr-source: physical;
+	border-left-width-rtl-source: physical;
+	border-left-width-value: medium;
+	border-right-color-ltr-source: physical;
+	border-right-color-rtl-source: physical;
+	border-right-color-value: -moz-use-text-color;
+	border-right-style-ltr-source: physical;
+	border-right-style-rtl-source: physical;
+	border-right-style-value: none;
+	border-right-width-ltr-source: physical;
+	border-right-width-rtl-source: physical;
+	border-right-width-value: medium;
+	border-top-color: -moz-use-text-color;
+	border-top-style: none;
+	border-top-width: medium;
+	height: 1px;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	outline-color: -moz-use-text-color;
+	outline-style: none;
+	outline-width: medium;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	position: absolute;
+	width: 100%;
+	height:40px;
+	top:0;
+	left:0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+}
+.select-list{
+	position:absolute;
+	left:0
+}
+.custom-select{
+	z-index:1;
+	&.unfold{
+		perspective:800px;
+		-webkit-perspective:800px;
+		-moz-perspective:800px;
+		perspective-origin:50% 100%;
+		-webkit-perspective-origin:50% 100%;
+		position:relative;
+		.select-list{
+			-webkit-transform:rotateX(-90deg);
+			-moz-transform:rotateX(-90deg);
+			transform:rotateX(-90deg);
+			-webkit-transition:.6s;
+			-moz-transition:.6s;
+			transition:.6s;
+			-webkit-transition-timing-function: cubic-bezier(0.545, 0.220, 0.045, 1); /* older webkit */
+			-webkit-transition-timing-function: cubic-bezier(0.545, 0.220, 0.045, 1.345); 
+			-moz-transition-timing-function: cubic-bezier(0.545, 0.220, 0.045, 1.345); 
+			-o-transition-timing-function: cubic-bezier(0.545, 0.220, 0.045, 1.345); 
+			transition-timing-function: cubic-bezier(0.545, 0.220, 0.045, 1.345); /* custom */
+			backface-visibility:hidden;
+			-webkit-backface-visibility:hidden;
+			transform-origin:50% 0%;
+			-webkit-transform-origin:50% 0%;
+			&.unfolded{
+				-webkit-transform:rotateX(0deg);
+				-moz-transform:rotateX(0deg);
+				transform:rotateX(0deg);
+				
+			}
+		}
+	}	
+}
+
+.custom-select *{
+	-webkit-user-select:none;
+	-khtml-user-select: none;
+	-moz-user-select: 	none;
+	-ms-user-select: 	none;
+	-o-user-select: 	none;
+	user-select: 		none;
+}
+.open_list{
+	z-index:10
+}
+.custom-select ul,
+.custom-select li{
+	margin:	0;
+	padding:0;
+	list-style:	none
+}
+.custom-select,
+.custom-select ul{
+	position:relative;
+	top:0;
+	left:0
+}
+.custom-select .custom-text{
+	cursor:	pointer;
+	display:inline-block;
+}
+.custom-select li{
+	cursor:	pointer;
+	min-height:	25px;
+}
+.select-scroll{
+	position:absolute;
+	right:2px;
+	top:2px;
+	z-index:2
+}
+.default-scroll ul{
+	overflow-y:	scroll
+}
+.custom-scroll{
+	overflow:hidden
+}
+.scroll-drag{
+	display:block;
+	position:absolute;
+	left:1px;
+	cursor:	pointer
+}
+.disabled *{
+	cursor: default !important
+}

@@ -1,0 +1,16 @@
+.margin-100{
+	margin-bottom:100px;
+}
+.margin-50{
+	margin-bottom:50px;
+}
+.js-iso-module{
+	text-align:center;
+	
+	.grid-cont{
+		width:calc(100% - 20px);
+		max-width:1000px;
+		padding:0px;
+		margin:0 auto;
+	}
+}
