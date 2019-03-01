@@ -112,7 +112,6 @@ function custom_mime_types($mime_types){
         ////////////////////////////////////////
         function remove_menus(){
             remove_menu_page( 'edit.php' );
-            remove_menu_page( 'wpfastestcacheoptions' );
         }
         add_action( 'admin_menu', 'remove_menus', 999 );
 
