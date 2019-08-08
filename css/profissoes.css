@@ -4868,7 +4868,8 @@
     -webkit-mask-position: top center;
     background-color: #FFDD15;
   }
-  .block-profissoes-formacao .optgroup-list li[data-value="58"] .image {
+  .block-profissoes-formacao .optgroup-list li[data-value="58"] .image,
+  .block-profissoes-formacao .optgroup-list li[data-value="15271"] .image {
     mask-image: url(../images/dummy/profissoes/cursos-intensivos.svg);
     mask-size: 30px 30px;
     mask-repeat: no-repeat;
@@ -4890,7 +4891,8 @@
     -webkit-mask-position: top center;
     background-color: var(--workshop);
   }
-  .block-profissoes-formacao .optgroup-list li[data-value="62"] .image {
+  .block-profissoes-formacao .optgroup-list li[data-value="62"] .image,
+  .block-profissoes-formacao .optgroup-list li[data-value="22223"] .image{
     mask-image: url(../images/dummy/profissoes/int-workshops.svg);
     mask-size: 30px 30px;
     mask-repeat: no-repeat;
@@ -4927,13 +4929,15 @@
   .block-profissoes-formacao .optgroup-list li[data-value="54"] > span {
     color: var(--yellow-edit);
   }
-  .block-profissoes-formacao .optgroup-list li[data-value="58"] > span {
+  .block-profissoes-formacao .optgroup-list li[data-value="58"] > span,
+  .block-profissoes-formacao .optgroup-list li[data-value="22223"] > span {
     color: var(--curso-intensivo);
   }
   .block-profissoes-formacao .optgroup-list li[data-value="60"] > span {
     color: var(--workshop);
   }
-  .block-profissoes-formacao .optgroup-list li[data-value="62"] > span {
+  .block-profissoes-formacao .optgroup-list li[data-value="62"] > span,
+  .block-profissoes-formacao .optgroup-list li[data-value="22223"] > span {
     color: var(--int-workshop);
   }
   .block-profissoes-formacao .optgroup-list li[data-value="33782"] > span {
