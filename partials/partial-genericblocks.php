@@ -595,7 +595,101 @@ if(have_rows('blocos')):
                                                 Edit.modules.collection.push({ type: 'isoModule', instance: new Edit.modules.isoModule('.js-equipa') });
                                             })
                                         </script>
-                                    </div>
+                                    </div>                                    
+                                    <?php
+                                    break;
+                                    case 'bloco_stories_curso':
+                                    ?>
+                                    <!-- STORIES MODULE -->
+                                    <div class="block-formacao-info <?php get_sub_field('margem') == 'nenhuma' ? ' ' : the_sub_field('margem') ?>">
+                                        <div class="content" style="margin: 70px auto 80px;">
+                                            <h2>
+                                                <span class="box-shadow"><?php the_sub_field('titulo'); ?></span>
+                                            </h2>
+                                        </div>
+                                        <!--SLIDER-->
+                                        <div class="block-text-and-image">
+
+                                        <div class="slider-program">
+
+                                        <div class="slider-wrapper">
+                                            
+                                            <div class="frame">
+                                                <div class="text">
+                                                    <div class="block">
+                                                        <h5 class="">entrevista a tutor</h5>
+                                                        <p>"O importante é estarmos atentos a tudo o que nos rodeia, testar constantemente diferentes formatos e pontos de contacto com o público e, acima de tudo, ser relevante."</p>
+                                                        <h4>Luís Torres</h4> 
+                                                        <a class="btn-more" href="#">ver entrevista
+                                                            <div class="icon form-btn btn-icon">
+                                                                <div class="border"></div>
+                                                                <div class="inner">
+                                                                    <div class="icon">
+                                                                        <div class="submit-icon"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="image-link">     
+                                                <div class="image">                                                                                               
+                                                    <div class="img" style="background-image:url('https://edit.com.pt/wp-content/uploads/2019/07/1200.jpg');background-position: right;"></div>                                                    
+                                                    <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->
+                                                    <div class="block-hover">
+                                                        <div class="border"></div>
+                                                        <div class="bg"></div>
+                                                    </div>
+                                                </div>
+                                                </a>                                                
+                                            </div> 
+                                            
+                                            <div class="frame">
+                                                <div class="text">
+                                                    <div class="block">
+                                                        <h5 class="">Entrevista a aluno</h5>
+                                                        <p>Existe sempre o medo de não conseguir sequer demonstrar as nossas capacidades depois do curso mas após um difícil mas necessário processo de recrutamento consegui fazê-lo e neste momento orgulho-me de ter um emprego numa empresa sólida na área de UX & UI Design.</p> <!-- <?php echo $frame->post ?> -->
+                                                        <h4>HENRIQUE TIMÓTEO</h4> <!-- <?php echo $frame->name ?> -->
+                                                        <a class="btn-more" href="#"> <!-- <?php echo $frame->link ?> -->
+                                                            ver entrevista
+                                                            <div class="icon form-btn btn-icon">
+                                                                <div class="border"></div>
+                                                                <div class="inner">
+                                                                    <div class="icon">
+                                                                        <div class="submit-icon"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="image-link">     
+                                                <div class="image">                                                                                               
+                                                    <div class="img" style="background-image:url('https://edit.com.pt/wp-content/uploads/2019/06/henrique-timoteo-1000.jpg')"></div>                                                    
+                                                    <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->
+                                                    <div class="block-hover">
+                                                        <div class="border"></div>
+                                                        <div class="bg"></div>
+                                                    </div>
+                                                </div>
+                                                </a>                                                
+                                            </div> 
+                                           
+
+                                        </div>
+
+                                        
+
+                                        <div class="button-prev"></div>
+
+                                        <div class="button-next"></div>
+
+                                        </div>
+
+                                        </div>
+                                        <!--end Slider-->
+                                        
+                                    </div>                                    
                                     <?php
                                     break;
                                     case 'titulo_noticias':
