@@ -93,7 +93,10 @@
       .slider-program .frame{flex-direction:column;}
 
       .slider-program .text{width:100%; order:2;}
-
+      
+      .slider-program a.image-link {
+         width: 100%;
+      }
       .slider-program .image{width:100%; order:1;}
 
       .slider-program .button-prev{top:0; left:0; right:inherit;}
