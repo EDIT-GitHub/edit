@@ -434,6 +434,36 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+
+var sliderProgram = new Swiper('.slider-program', {
+
+	
+	wrapperClass: 'slider-wrapper',
+
+	slideClass: 'frame',
+
+	effect: 'fade',
+
+	slideActiveClass: 'active',
+
+	slidesPerView: '1',
+
+	
+	
+	navigation: {
+
+		nextEl: '.button-next',
+
+		prevEl: '.button-prev',
+
+	}
+
+
+});
+
+
+</script>
 <?php endif; ?>
 
 <?php if (LANGUAGE == 'PT'): ?>

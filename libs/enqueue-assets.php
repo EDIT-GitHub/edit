@@ -55,7 +55,8 @@ function edit_theme_assets() {
 		wp_enqueue_style('edit-styles');
 	endif;
 	
-	
+	wp_enqueue_style( 'slider-dev-styles', get_template_directory_uri() . '/css/slider-style.css',  '', $edit_theme_version );
+	wp_register_script( 'slider-script', 'https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js', 'jquery', null, true);
 
 	// Register theme scripts
 	wp_register_script( 'edit-waypoints', 'https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js', 'jquery', null, true);
