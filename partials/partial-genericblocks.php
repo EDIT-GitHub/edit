@@ -607,85 +607,77 @@ if(have_rows('blocos')):
                                                 <span class="box-shadow"><?php the_sub_field('titulo'); ?></span>
                                             </h2>
                                         </div>
-                                        <!--SLIDER-->
-                                        <div class="block-text-and-image">
+                                         <!--SLIDER-->
+                                         <div class="block-text-and-image">
 
                                         <div class="slider-program">
 
                                         <div class="slider-wrapper">
-                                            
-                                            <div class="frame">
-                                                <div class="text">
-                                                    <div class="block">
-                                                        <h5 class="">entrevista a tutor</h5>
-                                                        <p>"O importante é estarmos atentos a tudo o que nos rodeia, testar constantemente diferentes formatos e pontos de contacto com o público e, acima de tudo, ser relevante."</p>
-                                                        <h4>Luís Torres</h4> 
-                                                        <a class="btn-more" href="#">ver entrevista
-                                                            <div class="icon form-btn btn-icon">
-                                                                <div class="border"></div>
-                                                                <div class="inner">
-                                                                    <div class="icon">
-                                                                        <div class="submit-icon"></div>
+                                        <?php
+                                            $stories = get_sub_field('entrevistas');
+
+                                            if($stories):
+                                                foreach($stories as $story):
+                                                    
+                                                    $link = get_permalink( $story->ID );
+
+                                                    if(get_field('blocos', $story->ID)){
+                                                       
+                                                        $blocos_stories = get_field('blocos', $story->ID);
+                                                        
+                                                        $block_quote = $blocos_stories[0]['tipo_de_bloco'][2]['blockquote'];
+                                                        
+                                                    }
+                                                    if(get_field('fundo_header', $story->ID)){
+                                                       
+                                                        $foto = get_field('fundo_header', $story->ID);
+                                                          
+                                                    }
+
+                                                    if(get_field('home_titulo', $story->ID)){
+                                                       
+                                                        $name = get_field('home_titulo', $story->ID);
+                                                        
+                                                    }
+                                                    echo '<div class="frame">
+                                                    <div class="text">
+                                                        <div class="block">
+                                                            <h5 class="">entrevista a tutor</h5>
+                                                            <p>"'.$block_quote.'"</p>
+                                                            <h4>'.$name.'</h4> 
+                                                            <a class="btn-more" href="#">ver entrevista
+                                                                <div class="icon form-btn btn-icon">
+                                                                    <div class="border"></div>
+                                                                    <div class="inner">
+                                                                        <div class="icon">
+                                                                            <div class="submit-icon"></div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <a href="#" class="image-link">     
-                                                <div class="image">                                                                                               
-                                                    <div class="img" style="background-image:url('https://edit.com.pt/wp-content/uploads/2019/07/1200.jpg');background-position: right;"></div>                                                    
-                                                    <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->
-                                                    <div class="block-hover">
-                                                        <div class="border"></div>
-                                                        <div class="bg"></div>
+                                                    <a href="#" class="image-link">     
+                                                    <div class="image">                                                                                               
+                                                        <div class="img" style="background-image:url('.$foto.');background-position: top right;"></div>                                                    
+                                                        <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->
+                                                        <div class="block-hover">
+                                                            <div class="border"></div>
+                                                            <div class="bg"></div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                </a>                                                
-                                            </div> 
+                                                    </a>                                                
+                                                </div> ';
+                                                endforeach;
+                                            endif;
                                             
-                                            <div class="frame">
-                                                <div class="text">
-                                                    <div class="block">
-                                                        <h5 class="">Entrevista a aluno</h5>
-                                                        <p>Existe sempre o medo de não conseguir sequer demonstrar as nossas capacidades depois do curso mas após um difícil mas necessário processo de recrutamento consegui fazê-lo e neste momento orgulho-me de ter um emprego numa empresa sólida na área de UX & UI Design.</p> <!-- <?php echo $frame->post ?> -->
-                                                        <h4>HENRIQUE TIMÓTEO</h4> <!-- <?php echo $frame->name ?> -->
-                                                        <a class="btn-more" href="#"> <!-- <?php echo $frame->link ?> -->
-                                                            ver entrevista
-                                                            <div class="icon form-btn btn-icon">
-                                                                <div class="border"></div>
-                                                                <div class="inner">
-                                                                    <div class="icon">
-                                                                        <div class="submit-icon"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="image-link">     
-                                                <div class="image">                                                                                               
-                                                    <div class="img" style="background-image:url('https://edit.com.pt/wp-content/uploads/2019/06/henrique-timoteo-1000.jpg')"></div>                                                    
-                                                    <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->
-                                                    <div class="block-hover">
-                                                        <div class="border"></div>
-                                                        <div class="bg"></div>
-                                                    </div>
-                                                </div>
-                                                </a>                                                
-                                            </div> 
+                                        ?>
                                            
-
                                         </div>
-
-                                        
 
                                         <div class="button-prev"></div>
-
                                         <div class="button-next"></div>
-
                                         </div>
-
                                         </div>
                                         <!--end Slider-->
                                         
