@@ -93,13 +93,16 @@
         backface-visibility: hidden;
         z-index: 4;
     }
+    .slider-program .text .block .btn-more:hover .btn-icon .inner .submit-icon{
+        transform: scale(1);
+    }
     .slider-program .btn-more:hover .slider-program .btn-icon .inner .submit-icon{
         transform: scale(1) !important;
     }
    .slider-program .image .img{
        background-position:top right !important;
      }
-    
+   
     @media screen and (max-width:1024px){
         .slider-program .text .block{
             max-width: 65%;
