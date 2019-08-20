@@ -620,30 +620,34 @@ if(have_rows('blocos')):
                                                 foreach($stories as $story):
                                                     
                                                     $link_story = get_permalink( $story->ID );
-
-                                                    if(get_field('blocos', $story->ID)){
-                                                       
-                                                        $blocos_stories = get_field('blocos', $story->ID);
-                                                        
-                                                        $block_quote = $blocos_stories[0]['tipo_de_bloco'][2]['blockquote'];
-                                                        
-                                                    }
-                                                    if(get_field('fundo_header', $story->ID)){
-                                                       
-                                                        $foto = get_field('fundo_header', $story->ID);
-                                                          
+                                                    
+                                                    if(get_field('fundo_header', $story->ID)){                                                       
+                                                        $foto = get_field('fundo_header', $story->ID);                                                          
                                                     }
 
-                                                    if(get_field('home_titulo', $story->ID)){
-                                                       
+                                                    if(get_field('home_titulo', $story->ID)){                                                       
                                                         $name = get_field('home_titulo', $story->ID);
-                                                        
                                                     }
+
                                                     echo '<div class="frame">
                                                     <div class="text">
                                                         <div class="block">
                                                             <h5 class="">entrevista a tutor</h5>
-                                                            <p>"'.$block_quote.'"</p>
+                                                            <p>"';
+                                                    if(get_field("blocos", $story->ID)){
+                                               
+                                                        $blocos_stories = get_field("blocos", $story->ID);
+                                                                                                                                                              
+                                                            foreach($blocos_stories as $blocos_storie){
+                                                                $tipo_bloco =  $blocos_storie['tipo_de_bloco'];
+                                                                    
+                                                                foreach($tipo_bloco as $tipos_blocos){
+                                                                    $block_quote = $tipos_blocos['blockquote'];    
+                                                                    echo $block_quote;
+                                                                }
+                                                            }                                                        
+                                                    }
+                                                    echo '"</p>                                                            
                                                             <h4>'.$name.'</h4> 
                                                             <a class="btn-more" href="'.$link_story.'">ver entrevista
                                                                 <div class="icon form-btn btn-icon">
