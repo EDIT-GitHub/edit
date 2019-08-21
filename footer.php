@@ -434,6 +434,8 @@
 		});
 	});
 </script>
+
+<?php endif; ?>
 <script type="text/javascript">
 
 var sliderProgram = new Swiper('.slider-program', {
@@ -464,8 +466,6 @@ var sliderProgram = new Swiper('.slider-program', {
 
 
 </script>
-<?php endif; ?>
-
 <?php if (LANGUAGE == 'PT'): ?>
 <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyB6tSm7bnJ_ZlWLfCLqkR0E1CDZ4LCC2wA"></script>
 <?php else: ?>
