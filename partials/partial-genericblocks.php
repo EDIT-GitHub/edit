@@ -628,11 +628,15 @@ if(have_rows('blocos')):
                                                     if(get_field('home_titulo', $story->ID)){                                                       
                                                         $name = get_field('home_titulo', $story->ID);
                                                     }
-
+                                                    
+                                                    if(get_field('alumni_stories', $story->ID)){                                                       
+                                                        $story_subtitle = get_field('alumni_stories', $story->ID);                                                        
+                                                    }
+                                                    
                                                     echo '<div class="frame">
                                                     <div class="text">
                                                         <div class="block">
-                                                            <h5 class="">entrevista a tutor</h5>
+                                                            <h5 class="">'.$story_subtitle.'</h5>
                                                             <p>"';
                                                     if(get_field("blocos", $story->ID)){
                                                
