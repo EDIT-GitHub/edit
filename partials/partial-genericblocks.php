@@ -620,7 +620,7 @@ if(have_rows('blocos')):
                                                 foreach($stories as $story):
                                                     
                                                     $link_story = get_permalink( $story->ID );
-                                                    
+                                                    $link_story_url =  wp_make_link_relative($link_story );
                                                     if(get_field('fundo_header', $story->ID)){                                                       
                                                         $foto = get_field('fundo_header', $story->ID);                                                          
                                                     }
@@ -653,7 +653,7 @@ if(have_rows('blocos')):
                                                     }
                                                     echo '"</p>                                                            
                                                             <h4>'.$name.'</h4> 
-                                                            <a class="btn-more" href="'.$link_story.'">ver entrevista
+                                                            <a class="btn-more" href="'.$link_story_url.'">ver entrevista
                                                                 <div class="icon form-btn btn-icon">
                                                                     <div class="border"></div>
                                                                     <div class="inner">
@@ -665,7 +665,7 @@ if(have_rows('blocos')):
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <a href="'.$link_story.'" class="image-link">     
+                                                    <a href="'.$link_story_url.'" class="image-link">     
                                                     <div class="image">                                                                                               
                                                         <div class="img" style="background-image:url('.$foto.');background-position: top right;"></div>                                                    
                                                         <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->

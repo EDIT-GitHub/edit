@@ -110,7 +110,7 @@
             max-width: 65%;
         }
         .slider-program .image .img{
-            background-size: initial;
+            background-size: cover;
         }
 
     }
