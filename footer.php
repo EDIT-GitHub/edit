@@ -459,7 +459,6 @@ var sliderProgram = new Swiper('.slider-program', {
     	},
   	},
 });
-sliderProgram.on('init', function() { /* do something */ });
 
 
 </script>
