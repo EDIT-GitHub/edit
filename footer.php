@@ -444,7 +444,7 @@ var sliderProgram = new Swiper('.slider-program', {
 	effect: 'fade',
 	slideActiveClass: 'active',
 	slidesPerView: '1',
-	watchOverflow: 'true',
+	looo: 'true',
 	navigation: {
 		nextEl: '.button-next',
 		prevEl: '.button-prev',
