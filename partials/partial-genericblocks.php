@@ -601,7 +601,7 @@ if(have_rows('blocos')):
                                     case 'bloco_stories_curso':
                                     ?>
                                     <!-- STORIES MODULE -->
-                                    <div class="block-formacao-info <?php get_sub_field('margem') == 'nenhuma' ? ' ' : the_sub_field('margem') ?>">
+                                    <div class="block-formacao-info alumni-stories <?php get_sub_field('margem') == 'nenhuma' ? ' ' : the_sub_field('margem') ?>">
                                         <div class="content" style="margin: 70px auto 80px;">
                                             <h2>
                                                 <span class="box-shadow"><?php the_sub_field('titulo'); ?></span>
@@ -653,7 +653,7 @@ if(have_rows('blocos')):
                                                     }
                                                     echo '"</p>                                                            
                                                             <h4>'.$name.'</h4> 
-                                                            <a class="btn-more" href="'.$link_story_url.'">ver entrevista
+                                                            <a class="btn-more" href="'.$link_story_url.'" target="_self">ver entrevista
                                                                 <div class="icon form-btn btn-icon">
                                                                     <div class="border"></div>
                                                                     <div class="inner">
@@ -665,7 +665,7 @@ if(have_rows('blocos')):
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <a href="'.$link_story_url.'" class="image-link">     
+                                                    <a href="'.$link_story_url.'" class="image-link" target="_self">     
                                                     <div class="image">                                                                                               
                                                         <div class="img" style="background-image:url('.$foto.');background-position: top right;"></div>                                                    
                                                         <div class="icon"><img src="https://edit.com.pt/wp-content/themes/edit/images/assets/svg/categorias/entrevista.svg" /></div> <!-- <?php echo $frame->icon ?> -->

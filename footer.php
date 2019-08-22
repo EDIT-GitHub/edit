@@ -439,30 +439,27 @@
 <script type="text/javascript">
 
 var sliderProgram = new Swiper('.slider-program', {
-
-	
 	wrapperClass: 'slider-wrapper',
-
 	slideClass: 'frame',
-
 	effect: 'fade',
-
 	slideActiveClass: 'active',
-
 	slidesPerView: '1',
-
-	
-	
+	watchOverflow: 'true',
 	navigation: {
-
 		nextEl: '.button-next',
-
 		prevEl: '.button-prev',
-
-	}
-
-
+	},
+	on: {
+    	init: function () {
+			var totalSlides = this.slides.length;
+      		if (totalSlides==1){
+				jQuery('.button-next').hide();
+				jQuery('.button-prev').hide();
+			}
+    	},
+  	},
 });
+sliderProgram.on('init', function() { /* do something */ });
 
 
 </script>
