@@ -119,9 +119,14 @@
     
       .slider-program{ margin:auto;}
 
-      .slider-program .frame{flex-direction:column; height: auto;}
+      .slider-program .frame{
+            background-color: #000000;
+            flex-direction: row; 
+            height: auto;
+        }
 
-      .slider-program .text{width:100%; order:2; height: auto;}
+      .slider-program .text{width:100%; 
+        align-items: initial;order:2; height: auto;}
       
       .slider-program a.image-link {
          width: 100%;
