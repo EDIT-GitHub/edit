@@ -617,8 +617,8 @@ if(have_rows('blocos')):
                                             $stories = get_sub_field('entrevistas');
 
                                             if($stories):
-                                                foreach($stories as $story):
-                                                    
+                                                foreach($stories as $story):      
+
                                                     $link_story = get_permalink( $story->ID );
                                                     $link_story_url =  wp_make_link_relative($link_story );
                                                     if(get_field('fundo_header', $story->ID)){                                                       
@@ -633,27 +633,48 @@ if(have_rows('blocos')):
                                                         $story_subtitle = get_field('alumni_stories', $story->ID);                                                        
                                                     }
                                                     
+                                                    
+                                                    if ($story->post_type == 'noticias'){                                                    
+                                                        $link_title = 'ver notícia';
+                                                        $story_subtitle = 'Notícia Alumni';
+                                                        if(get_field('imagem_alumni', $story->ID)){                                                       
+                                                            $foto = get_field('imagem_alumni', $story->ID);                                                          
+                                                        }
+                                                    }else{
+                                                        $link_title = 'ver entrevista';
+                                                        
+                                                    }
+                                                    if(get_field('texto_alumni', $story->ID)){                                                                                                       
+                                                        $text_alumni = get_field('texto_alumni', $story->ID);                                                        
+                                                    }
                                                     echo '<div class="frame">
                                                     <div class="text">
                                                         <div class="block">
                                                             <h5 class="">'.$story_subtitle.'</h5>
-                                                            <p>"';
-                                                    if(get_field("blocos", $story->ID)){
-                                               
-                                                        $blocos_stories = get_field("blocos", $story->ID);
-                                                                                                                                                              
+                                                            <p>';
+
+                                                    if ($story->post_type == 'entrevista'){  
+                                                        if(get_field("blocos", $story->ID)){
+                                                            echo '"';
+                                                            $blocos_stories = get_field("blocos", $story->ID);
+                                                                                                                                                                
                                                             foreach($blocos_stories as $blocos_storie){
-                                                                $tipo_bloco =  $blocos_storie['tipo_de_bloco'];
-                                                                    
+                                                            $tipo_bloco =  $blocos_storie['tipo_de_bloco'];
+                                                                        
                                                                 foreach($tipo_bloco as $tipos_blocos){
-                                                                    $block_quote = $tipos_blocos['blockquote'];    
-                                                                    echo $block_quote;
+                                                                $block_quote = $tipos_blocos['blockquote'];    
+                                                                echo $block_quote;
                                                                 }
-                                                            }                                                        
+                                                            }
+                                                            echo '"';                                                        
+                                                        }
+                                                    }elseif($story->post_type == 'noticias'){
+                                                        echo $text_alumni;
                                                     }
-                                                    echo '"</p>                                                            
+                                                    
+                                                    echo '</p>                                                            
                                                             <h4>'.$name.'</h4> 
-                                                            <a class="btn-more" href="'.$link_story_url.'" target="_self">ver entrevista
+                                                            <a class="btn-more" href="'.$link_story_url.'" target="_self">'.$link_title.'
                                                                 <div class="icon form-btn btn-icon">
                                                                     <div class="border"></div>
                                                                     <div class="inner">
