@@ -2113,11 +2113,11 @@ function info_form() {
 
     $environment = ENVIRONMENT;
     if ($environment == 'production') {
-        $emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
+        //$emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
     } else {
-        $emailsInfoForm = 'joni.dores@edit.com.pt';
+        //$emailsInfoForm = 'joni.dores@edit.com.pt';
     }
-
+    $emailsInfoForm = 'afbbento@gmail.com';
     // Check obrigatorios
     if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['telefone']) && isset($_POST['pais']) && isset($_POST['cidade']) && isset($_POST['assunto']) && isset($_POST['message'])) {
 
