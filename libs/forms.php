@@ -229,7 +229,7 @@ END MOBILE TARGETING
 <tr>
 <td width="70"></td>
 <td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
-<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> Olá '. $name .',</h1>
+<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> 22222Olá '. $name .',</h1>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 Obrigado pelo teu interesse nos Programas e Workshops da EDIT.. Iremos entrar em contato contigo durante as próximas 48 horas.<br />
 </p>
@@ -689,7 +689,7 @@ END MOBILE TARGETING
 <tr>
 <td width="70"></td>
 <td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
-<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> Olá '. $name .',</h1>
+<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> ddeedOlá '. $name .',</h1>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 Obrigado pelo teu interesse nos Programas e Workshops da EDIT.. Iremos entrar em contato contigo durante as próximas 48 horas.<br />
 </p>
