@@ -950,7 +950,8 @@ function workshop_form_en() {
 
     $environment = ENVIRONMENT;
     if ($environment == 'production') {
-        $emailsWorkshopFormEN = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
+        //$emailsWorkshopFormEN = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
+        $emailsWorkshopForm = 'afbbento@gmail.com';
     } else {
         $emailsWorkshopFormEN = 'afbbento@gmail.com';
     }
@@ -2116,7 +2117,8 @@ function info_form() {
 
     $environment = ENVIRONMENT;
     if ($environment == 'production') {
-        $emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
+        //$emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
+        $emailsWorkshopForm = 'afbbento@gmail.com';
     } else {
         $emailsInfoForm = 'afbbento@gmail.com';
     }
