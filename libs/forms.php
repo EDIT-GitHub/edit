@@ -1405,7 +1405,8 @@ function eventos_form() {
     $environment = ENVIRONMENT;
 
     if ($environment == 'production') {
-        $emailsEventoForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt,joana.tomas@edit.com.pt';
+        //$emailsEventoForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt,joana.tomas@edit.com.pt';
+        $emailsEventoForm = 'afbbento@gmail.com';
     } else {
         $emailsEventoForm = 'afbbento@gmail.com';
     }
@@ -1593,7 +1594,7 @@ END MOBILE TARGETING
 <tr>
 <td width="70"></td>
 <td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
-<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;">Olá '. $name .',</h1>
+<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;">1596Olá '. $name .',</h1>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 O formulário que submeteste no nosso site foi recebido pela equipa EDIT.<br/>
 </p>
