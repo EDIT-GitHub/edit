@@ -31,7 +31,7 @@ function workshop_form() {
     if ($environment == 'production') {
         $emailsWorkshopForm = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
     } else {
-        $emailsWorkshopForm = 'joni.dores@edit.com.pt';
+        $emailsWorkshopForm = 'afbbento@gmail.com';
     }
 
 
@@ -491,7 +491,7 @@ function curso_form() {
     if ($environment == 'production') {
         $emailsRegistrationForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
     } else {
-        $emailsRegistrationForm = 'joni.dores@edit.com.pt';
+        $emailsRegistrationForm = 'afbbento@gmail.com';
     }
 
 
@@ -950,7 +950,7 @@ function workshop_form_en() {
     if ($environment == 'production') {
         $emailsWorkshopFormEN = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
     } else {
-        $emailsWorkshopFormEN = 'joni.dores@edit.com.pt';
+        $emailsWorkshopFormEN = 'afbbento@gmail.com';
     }
 
     if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['telefone']) && isset($_POST['pais']) && isset($_POST['cidade']) && isset($_POST['interests']) && isset($_POST['assunto']) && isset($_POST['url']) ) {
@@ -1405,7 +1405,7 @@ function eventos_form() {
     if ($environment == 'production') {
         $emailsEventoForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt,joana.tomas@edit.com.pt';
     } else {
-        $emailsEventoForm = 'joni.dores@edit.com.pt';
+        $emailsEventoForm = 'afbbento@gmail.com';
     }
 
 
@@ -2077,7 +2077,7 @@ if ($environment == 'production') {
         $emailsRecrutamentoForm = array('lisboa@tronik.agency',$email);
     }
 } else {
-    $emailsRecrutamentoForm = 'joni.dores@edit.com.pt';
+    $emailsRecrutamentoForm = 'afbbento@gmail.com';
 }
 
 
@@ -2115,7 +2115,7 @@ function info_form() {
     if ($environment == 'production') {
         $emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
     } else {
-        $emailsInfoForm = 'joni.dores@edit.com.pt';
+        $emailsInfoForm = 'afbbento@gmail.com';
     }
 
     // Check obrigatorios
