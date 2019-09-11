@@ -560,190 +560,727 @@ function curso_form() {
         }else if($assunto == 'SOPP'){
             $mailAssunto = 'marcação de SOPP';
         }
-        $email = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        $email = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Your Message Subject or Title</title>
-        <style type="text/css">
-        /* Based on The MailChimp Reset INLINE: Yes. */
-        /* Client-specific Styles */
-    #outlook a {
-        padding: 0;
-    }
-
-    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
-    .ExternalClass {
-        width: 100%;
-    }
-
-    #backgroundTable {
-    margin: 0;
-    padding: 0;
-    width: 100% !important;
-    
-}
-
-/* Outlook 07, 10 Padding issue fix
-Bring inline: No.*/
-table td {
-    border-collapse: collapse;
-}
-
-
-/***************************************************
-                    ****************************************************
-MOBILE TARGETING
-                    ****************************************************
-                    ***************************************************/
-@media only screen and (max-device-width: 480px) {
-    /* Part one of controlling phone number linking for mobile. */
-    a[href^="tel"], a[href^="sms"] {
-        text-decoration: none;
-        color: blue; /* or whatever your want */
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-        text-decoration: default;
-        color: orange !important;
-        pointer-events: auto;
-        cursor: default;
-    }
-}
-
-/* More Specific Targeting */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* You guessed it, ipad (tablets, smaller screens, etc) */
-    /* repeating for the ipad */
-    a[href^="tel"], a[href^="sms"] {
-        text-decoration: none;
-        color: blue; /* or whatever your want */
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-        text-decoration: default;
-        color: orange !important;
-        pointer-events: auto;
-        cursor: default;
-    }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    /* Put your iPhone 4g styles in here */
-}
-
-/* Android targeting */
-@media only screen and (-webkit-device-pixel-ratio:.75) {
-    /* Put CSS for low density (ldpi) Android layouts in here */
-}
-
-@media only screen and (-webkit-device-pixel-ratio:1) {
-    /* Put CSS for medium density (mdpi) Android layouts in here */
-}
-
-@media only screen and (-webkit-device-pixel-ratio:1.5) {
-    /* Put CSS for high density (hdpi) Android layouts in here */
-}
-/* end Android targeting */
-</style>
-<!-- Targeting Windows Mobile -->
-<!--[if IEMobile 7]>
-<style type="text/css">
-
-</style>
-<![endif]-->
-<!-- ***********************************************
-                ****************************************************
-END MOBILE TARGETING
-                ****************************************************
-                ************************************************ -->
-<!--[if gte mso 9]>
-<style>
-/* Target Outlook 2007 and 2010 */
-</style>
-<![endif]-->
-</head>
-<body style=" width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
-<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-<tr>
-<td valign="top">
-<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-<table cellpadding="0" cellspacing="0" border="0" align="center" width="700">
-<tr>
-<td>
-<a href="https://edit.com.pt"><img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_01.jpg" style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/></a>
-</td>
-</tr>
-<tr>
-<td>
-<table cellpadding="0" cellspacing="0" width="700" style="text-align: center; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-<tr>
-<td width="70"></td>
-<td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
-<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> Olá '. $name .',</h1>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Obrigado pelo teu interesse nos Programas e Workshops da EDIT.. Iremos entrar em contato contigo durante as próximas 48 horas.<br />
-</p>
-<p></p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Entretanto, caso necessites de algum de esclarecimento, poderás enviar um email para <a href="mailTo:geral@edit.com.pt">geral@edit.com.pt</a> ou entrar em contacto através de:<br /><br /><br />
-<b>- EDIT. Lisboa</b>: <a href="tel:00351210182455">(+351) 210 182 455,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
-<b>- EDIT. Porto</b>: <a href="tel:00351224960345">(+351) 224 960 345,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Sabe mais sobre a EDIT. e a nossa oferta formativa <a href="https://edit.com.pt/wp-content/uploads/2017/06/EDIT.Presentation.pdf">aqui.</a><br/><br />
-
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Obrigado.
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-<b>EDIT. Lisboa</b> <br />
-ALAMEDA D. AFONSO <br />
-HENRIQUES, 7A <br />
-1900-178, Lisboa <br />
-Portugal <br />
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-<b>EDIT. Porto</b> <br />
-Rua Gonçalo Cristovão <br />
-nº 347, 3º Piso, Sala 302 e 309 <br />
-4000-270, Porto <br />
-Portugal <br />
-</p>
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-<b>EDIT. Madrid</b> <br />
-Calle de la Colegiata 9, utopic_US <br />
-28012 Madrid <br />
-Espanha <br />
-</p>
-</td>
-<td width="70"></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_03.jpg" style="display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/>
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-<!-- End of wrapper table -->
-</body>
-</html>';
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Edit - Newsletter</title>
+                <style type="text/css">
+                    @import url(https://fonts.googleapis.com/css?family=Roboto:300,300italic);          
+                    table{
+                    border-collapse:collapse;
+                    }
+                    img,a img{
+                    border:0;
+                    outline:none;
+                    text-decoration:none;
+                    }           
+                    a{
+                    word-wrap:break-word;
+                    }            
+                    table,td{
+                    mso-table-lspace:0pt;
+                    mso-table-rspace:0pt;
+                    }
+                    #outlook a{
+                    padding:0;
+                    }
+                    img{
+                    -ms-interpolation-mode:bicubic;
+                    }
+                    body,table,td,p,a,li,blockquote{
+                    -ms-text-size-adjust:100%;
+                    -webkit-text-size-adjust:100%;
+                    }                     
+                    td.content-wrapper{
+                        padding-left: 10% !important;
+                        padding-right: 10% !important;
+                    }
+                    td.content-wrapper-lg{
+                        padding-left: 5% !important;
+                        padding-right: 5% !important;
+                    }  
+                    @media only screen and (max-width: 660px){
+                        body,table,td,p,a,li,blockquote{
+                            -webkit-text-size-adjust:none !important;
+                        }
+                        body{
+                            width:100% !important;
+                            min-width:100% !important;
+                        }
+                        td.content-wrapper{
+                            padding-left: 20px !important;
+                            padding-right: 20px !important;
+                        }
+                        .coord-name{
+                            line-height: 1 !important;
+                        }
+                        .alumni-name{
+                            height: 48px;
+                        }
+                    }
+                </style>
+            </head>
+            <body style="margin: 0;padding: 0;">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="background-color: #FFFFFF;">
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN TEMPLATE // -->
+                                <table border="0" cellpadding="0" cellspacing="0" style="border: 1px solid #D8D8D8;max-width: 700px;">                            
+                                    <tr>
+                                        <td align="center" valign="top">
+                                            <!-- BEGIN HEADER // -->
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #000000; border-top: 0;border-bottom: 0;">
+                                                <tr>
+                                                    <td valign="top" style="font-weight:normal; padding: 0 80px;" class="content-wrapper">                                                                                                                                        
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 40px 18px 18px;">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <span></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                       
+                                                       
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody >
+                                                                <tr>
+                                                                    <td valign="top">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="middle">
+                                                                                         <img alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/logo-edit.png" width="153" style="max-width:153px; padding-bottom: 0; display: inline !important; vertical-align: bottom;">                                                                               
+                                                                                    </td>
+                                                                                    <td valign="middle" style="text-align: right;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;color: #828282;">
+                                                                                        25 Agosto, 2019                                                                               
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 40px 18px 18px;">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <span></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding-bottom: 70px; font-family: Helvetica, Arial;font-size: 45px;font-weight: normal;color:#FFFFFF;">
+                                                                        Olá Ricardo Silva
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- // END HEADER -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <!-- BEGIN BODY // -->
+                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td valign="top" >
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody >
+                                                                <tr>
+                                                                    <td  style="padding: 30px 18px 0px;">
+                                                                        <table  border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <span></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+        
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody >
+                                                                <tr>
+                                                                    <td style="padding: 35px 80px 0;font-family: Helvetica, Arial;color: #8d8d8d;font-size: 16px;font-weight: normal;" class="content-wrapper">
+                                                                       Obrigado pelo teu interesse nos programas e Workshops da EDIT.
+                                                                        <br><span style="color:#000000">Iremos entrar em contacto contigo durante as próximas 48 horas.</span>
+                                                                        <br><br>                                                               
+                                                                        Entretanto caso necessites de algum esclarecimento não hesites em entrar em contacto comigo.
+                                                                        <br><br>  
+                                                                        Cumprimentos,
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>           
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody >
+                                                                <tr>
+                                                                    <td style="padding: 40px 80px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td width="70" style="padding-right: 20px;">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="">
+                                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/coordenador.png" style="width: 70px;padding-bottom: 0; display: inline !important; vertical-align: bottom;">                                                                               
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;font-size: 20px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.55;letter-spacing: normal;color: #000000;" class="coord-name">
+                                                                                                                       Mariana Guerra 
+                                                                                                                    </td>                                                                                                                                                    
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">
+                                                                                                                       Coordernadora
+                                                                                                                    </td>                                                                                                                                                    
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.55;letter-spacing: normal;color: #000000;">
+                                                                                                                       <a style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.55;letter-spacing: normal;color: #000000;text-decoration: none;" href="mailto:mariana@edit.com.pt">mariana@edit.com.pt</a>
+                                                                                                                    </td>                                                                                                                                                    
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #000000;">
+                                                                                                                       +351 914 543 443
+                                                                                                                    </td>                                                                                                                                                    
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>                                                                           
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 10px 80px 30px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="top" style="border-top:1px solid #D8D8D8;">
+                                                                                        <span></span>
+                                                                                    </td>                                                                                                                                                    
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>                                     
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 30px 80px 40px 80px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal;" class="content-wrapper">
+                                                                        Notícias
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 0 40px;" class="content-wrapper-lg">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>                                                                        
+                                                                                <tr>
+                                                                                    <td valign="bottom" style="background-image:url("https://edit.com.pt/wp-content/themes/edit/newsletter-edit/noticia1.png");background-position: center;max-width:620px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal; height: 360px;background-size: cover;">                                                                                
+                                                                                        <div style="height: 10px;background-color:#ffdd06;width: 50%;"></div>                                                                               
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding: 40px 40px 4px;font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: bold;font-style: normal;">                                                                                
+                                                                                        Report OFFF
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding:0px 40px;font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: 300;font-style: normal;">                                                                                
+                                                                                        Barcelona 2019
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding:30px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
+                                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding:0px 40px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #000000;">                                                                                
+                                                                                        <a href="http://www.edit.com.pt" target="_blank" style="color:#000000; text-decoration: none;"><span style="color: #8d8d8d;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;">•</span> Ler mais</a>
+                                                                                    </td> 
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 0 40px;" class="content-wrapper-lg">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>                                                                        
+                                                                                <tr>
+                                                                                    <td valign="bottom" style="background-image:url("https://edit.com.pt/wp-content/themes/edit/newsletter-edit/noticia2.png");background-position: center;max-width:620px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal; height: 360px;background-size: cover;">                                                                                
+                                                                                        <div style="height: 10px;background-color:#ffdd06;width: 50%;"></div>                                                                               
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding: 40px 40px 4px;font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: bold;font-style: normal;">                                                                                
+                                                                                        Report OFFF
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding:0px 40px;font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: 300;font-style: normal;">                                                                                
+                                                                                        Barcelona 2019
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding:30px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
+                                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding:0px 40px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #000000;">                                                                                
+                                                                                        <a href="http://www.edit.com.pt" target="_blank" style="color:#000000; text-decoration: none;"><span style="color: #8d8d8d;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;">•</span> Ler mais</a>
+                                                                                    </td> 
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 10px 80px 30px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="top" style="border-top:1px solid #D8D8D8;">
+                                                                                        <span></span>
+                                                                                    </td>                                                                                                                                                    
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 30px 80px 40px 80px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal;" class="content-wrapper">
+                                                                        Formações
+                                                                    </td> 
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 0 80px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="top" width="50%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top">
+                                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/workshop.png" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial; padding-top: 25px;padding-bottom: 5px;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                        Workshop
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: #65c4b3;font-size: 20px;font-weight: normal;">
+                                                                                                        Social Media Marketing Strategy
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;" class="alumni-name">
+                                                                                                        14 e 15 Set. de 2019
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="padding-top: 25px;font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                        <a href="https://edit.com.pt" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;text-decoration: none;color:#000000;"><span style=" color: #8d8d8d;">•</span> Mais informações</a>
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td valign="top" >
+                                                                                        <table align="right" border="0" cellpadding="0" cellspacing="0" width="40px">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <span></span>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>                                                    
+                                                                                    <td valign="top" width="50%">
+                                                                                       <table align="right" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top">
+                                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/intensivo.png" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial; padding-top: 25px;padding-bottom: 5px;color: #e98375;font-size: 16px;font-weight: normal;">
+                                                                                                        Curso Intensivo
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: #e98375;font-size: 20px;font-weight: normal;">
+                                                                                                        Design Thinking for Business Innovation
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;color: #e98375;font-size: 16px;font-weight: normal;" class="alumni-name">
+                                                                                                        16 Set. a 22 Nov. de 2019
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="padding-top: 25px;font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                        <a href="https://edit.com.pt" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;text-decoration: none;color:#000000;"><span style=" color: #8d8d8d;">•</span> Mais informações</a>
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>                                                                                                                                                    
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 60px 80px 20px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="top" style="border-top:1px solid #D8D8D8;">
+                                                                                        <span></span>
+                                                                                    </td>                                                                                                                                                    
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 30px 80px 40px 80px;font-family: Helvetica, Arial, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal;" class="content-wrapper">
+                                                                        Alumni Stories
+                                                                    </td> 
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 0 80px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="top" width="50%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top">
+                                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/bitmap.png" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial; padding-top: 25px;padding-bottom: 5px;color: #8d8d8d;font-size: 16px;font-weight: normal;">
+                                                                                                        Entrevista a Aluno
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: #000000;font-size: 20px;font-weight: normal;" class="alumni-name">
+                                                                                                        Henrique Timóteo
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>                                                                                    
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="padding-top: 10px;font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                        <a href="https://edit.com.pt" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;text-decoration: none;color:#000000;"><span style=" color: #8d8d8d;">•</span> Ver entrevista</a>
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td valign="top">
+                                                                                        <table align="right" border="0" cellpadding="0" cellspacing="0" width="40px">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <span></span>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>                                                              
+                                                                                    <td valign="top" width="50%">
+                                                                                       <table align="right" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td valign="top">
+                                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/bitmap2.png" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial; padding-top: 25px;padding-bottom: 5px;color: #8d8d8d;font-size: 16px;font-weight: normal;">
+                                                                                                        Entrevista a Aluno
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: #000000;font-size: 20px;font-weight: normal;" class="alumni-name">
+                                                                                                        Sofia Gomes
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>                                                                                      
+                                                                                                <tr>
+                                                                                                    <td valign="top" style="padding-top: 10px;font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                        <a href="https://edit.com.pt" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;text-decoration: none;color:#000000;"><span style=" color: #8d8d8d;">•</span> Ver entrevista</a>
+                                                                                                    </td>                                                                                                                                                    
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>                                                                                                                                                    
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 60px 80px 20px;" class="content-wrapper">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td valign="top" style="border-top:1px solid #D8D8D8;">
+                                                                                        <span></span>
+                                                                                    </td>                                                                                                                                                    
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 30px 80px 40px 80px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal;" class="content-wrapper">
+                                                                        Carreiras
+                                                                    </td> 
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" style="padding: 0 80px;" class="content-wrapper">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                                            <tbody>                                                                        
+                                                                                <tr>
+                                                                                    <td valign="top" style="width:153px;padding-bottom: 40px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal;">
+                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/carreiras.jpg" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">                                                                               
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: bold;font-style: normal;">                                                                                
+                                                                                        Digital Marketer
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: 300;font-style: normal;">                                                                                
+                                                                                        Your career starts here.
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding-top:30px; padding-bottom: 30px; font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
+                                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                                                                    </td> 
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td valign="top" style="padding-bottom:40px; font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #000000;">                                                                                
+                                                                                        <a href="https://edit.com.pt" target="_blank" style="color:#000000; text-decoration: none;"><span style="color: #8d8d8d;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;">•</span> Ler mais</a>
+                                                                                    </td> 
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- // END BODY -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" valign="top" style="padding-top: 20px;">
+                                            <!-- BEGIN FOOTER // -->
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #000000; border-top: 0;border-bottom: 0;">
+                                                <tr>
+                                                    <td valign="top" class="footerContainer" style="padding-bottom:9px;    padding-top: 60px;">
+                                                        <table  border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="    padding-bottom: 20px;text-align: center;font-family: Helvetica, Arial;color:#FFFFFF; font-size: 14px;font-weight: normal;font-style: normal;">
+                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/logo-edit.png" width="153" style="max-width:153px; padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody >
+                                                                <tr>
+                                                                    <td  style="padding: 15px 18px 0px;">
+                                                                        <table  border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <span></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table  border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align: center;font-family: Helvetica, Arial;color:#FFFFFF; font-size: 14px;font-weight: normal;font-style: normal;">
+                                                                        LISBOA<span style="padding: 0 10px;">•</span>PORTO<span style="padding: 0 10px;">•</span>MADRID<span style="padding: 0 10px;">•</span>SÃO PAULO (2020)
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="center" valign="top" style="    padding: 30px 0 30px;" class="themezyFollowBlockInner">
+                                                                        <a href="https://www.linkedin.com" target="_blank" style="padding: 0 10px;"><img src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/linked-in.png" alt="Linkedin" width="40" style="width:40px; max-width:40px;"></a>
+                                                                        <a href="http://www.facebook.com" target="_blank" style="padding: 0 10px;"><img src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/facebook.png" alt="Facebook" width="40" style="width:40px; max-width:40px;"></a>
+                                                                        <a href="http://www.instagram.com" target="_blank" style="padding: 0 10px;"><img src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/instagram.png" alt="Instagram" width="40" style="width:40px; max-width:40px;"></a>
+                                                                        <a href="http://www.vimeo.com" target="_blank" style="padding: 0 10px;"><img src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/vimeo.png" alt="Vimeo" width="40" style="width:40px; max-width:40px;"></a>
+                                                                        <a href="http://www.youtube.com" target="_blank" style="padding: 0 10px;"><img src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/youtube.png" alt="Youtube" width="40" style="width:40px; max-width:40px;"></a>
+                                                                        <a href="http://www.twitter.com" target="_blank" style="padding: 0 10px;"><img src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/twitter.png" alt="twitter" width="40" style="width:40px; max-width:40px;"></a>   
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock">
+                                                            <tbody >
+                                                                <tr>
+                                                                    <td valign="top" style="text-align:center;font-size: 14px; padding-bottom: 20px;font-family: Helvetica, Arial;font-weight: normal;font-style: normal;color: #8d8d8d;">
+                                                                    Se não pretendes receber emails como estes <a href="#" style="color: #8d8d8d;">clica aqui</a>.<br>
+                                                                    © 2019 EDIT. - Disruptive Digital Education                                                                                
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>                                               
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- // END FOOTER -->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END TEMPLATE -->
+                            </td>
+                        </tr>
+                    </table>        
+            </body>
+        </html>';
 
 
 
