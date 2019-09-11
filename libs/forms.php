@@ -391,7 +391,7 @@ function workshop_form() {
                                                                         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>                                                                        
                                                                                 <tr>
-                                                                                    <td valign="bottom" style="background-image:url("https://edit.com.pt/wp-content/themes/edit/newsletter-edit/noticia1.png");background-position: center;max-width:620px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal; height: 360px;background-size: cover;">                                                                                
+                                                                                    <td valign="bottom" style="background-image:url(https://edit.com.pt/wp-content/themes/edit/newsletter-edit/noticia1.png);background-position: center;max-width:620px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal; height: 360px;background-size: cover;">                                                                                
                                                                                         <div style="height: 10px;background-color:#ffdd06;width: 50%;"></div>                                                                               
                                                                                     </td>
                                                                                 </tr>
@@ -428,7 +428,7 @@ function workshop_form() {
                                                                         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>                                                                        
                                                                                 <tr>
-                                                                                    <td valign="bottom" style="background-image:url("https://edit.com.pt/wp-content/themes/edit/newsletter-edit/noticia2.png");background-position: center;max-width:620px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal; height: 360px;background-size: cover;">                                                                                
+                                                                                    <td valign="bottom" style="background-image:url(https://edit.com.pt/wp-content/themes/edit/newsletter-edit/noticia2.png);background-position: center;max-width:620px;font-family: Helvetica, Arial;color:#000000; font-size: 35px;font-weight: normal;font-style: normal; height: 360px;background-size: cover;">                                                                                
                                                                                         <div style="height: 10px;background-color:#ffdd06;width: 50%;"></div>                                                                               
                                                                                     </td>
                                                                                 </tr>
