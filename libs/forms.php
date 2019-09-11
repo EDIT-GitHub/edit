@@ -101,465 +101,6 @@ function workshop_form() {
         }else if($assunto == 'SOPP'){
             $mailAssunto = 'marcação de SOPP';
         }
-        $email = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-        <html xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Your Message Subject or Title</title>
-        <style type="text/css">
-        /* Based on The MailChimp Reset INLINE: Yes. */
-        /* Client-specific Styles */
-    #outlook a {
-        padding: 0;
-    }
-
-    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
-    .ExternalClass {
-        width: 100%;
-    }
-
-    #backgroundTable {
-    margin: 0;
-    padding: 0;
-    width: 100% !important;
-    
-}
-
-/* Outlook 07, 10 Padding issue fix
-Bring inline: No.*/
-table td {
-    border-collapse: collapse;
-}
-
-
-/***************************************************
-                    ****************************************************
-MOBILE TARGETING
-                    ****************************************************
-                    ***************************************************/
-@media only screen and (max-device-width: 480px) {
-    /* Part one of controlling phone number linking for mobile. */
-    a[href^="tel"], a[href^="sms"] {
-        text-decoration: none;
-        color: blue; /* or whatever your want */
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-        text-decoration: default;
-        color: orange !important;
-        pointer-events: auto;
-        cursor: default;
-    }
-}
-
-/* More Specific Targeting */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* You guessed it, ipad (tablets, smaller screens, etc) */
-    /* repeating for the ipad */
-    a[href^="tel"], a[href^="sms"] {
-        text-decoration: none;
-        color: blue; /* or whatever your want */
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-        text-decoration: default;
-        color: orange !important;
-        pointer-events: auto;
-        cursor: default;
-    }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    /* Put your iPhone 4g styles in here */
-}
-
-/* Android targeting */
-@media only screen and (-webkit-device-pixel-ratio:.75) {
-    /* Put CSS for low density (ldpi) Android layouts in here */
-}
-
-@media only screen and (-webkit-device-pixel-ratio:1) {
-    /* Put CSS for medium density (mdpi) Android layouts in here */
-}
-
-@media only screen and (-webkit-device-pixel-ratio:1.5) {
-    /* Put CSS for high density (hdpi) Android layouts in here */
-}
-/* end Android targeting */
-</style>
-<!-- Targeting Windows Mobile -->
-<!--[if IEMobile 7]>
-<style type="text/css">
-
-</style>
-<![endif]-->
-<!-- ***********************************************
-                ****************************************************
-END MOBILE TARGETING
-                ****************************************************
-                ************************************************ -->
-<!--[if gte mso 9]>
-<style>
-/* Target Outlook 2007 and 2010 */
-</style>
-<![endif]-->
-</head>
-<body style=" width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
-<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-<tr>
-<td valign="top">
-<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-<table cellpadding="0" cellspacing="0" border="0" align="center" width="700">
-<tr>
-<td>
-<a href="https://edit.com.pt"><img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_01.jpg" style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/></a>
-</td>
-</tr>
-<tr>
-<td>
-<table cellpadding="0" cellspacing="0" width="700" style="text-align: center; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-<tr>
-<td width="70"></td>
-<td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
-<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> Olá '. $name .',</h1>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Obrigado pelo teu interesse nos Programas e Workshops da EDIT.. Iremos entrar em contato contigo durante as próximas 48 horas.<br />
-</p>
-<p></p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Entretanto, caso necessites de algum de esclarecimento, poderás enviar um email para <a href="mailTo:geral@edit.com.pt">geral@edit.com.pt</a> ou entrar em contacto através de:<br /><br /><br />
-<b>- EDIT. Lisboa</b>: <a href="tel:00351210182455">(+351) 210 182 455,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
-<b>- EDIT. Porto</b>: <a href="tel:00351224960345">(+351) 224 960 345,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Sabe mais sobre a EDIT. e a nossa oferta formativa <a href="https://edit.com.pt/wp-content/uploads/2017/06/EDIT.Presentation.pdf">aqui.</a><br/><br />
-
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Obrigado.
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-<b>EDIT. Lisboa</b> <br />
-ALAMEDA D. AFONSO <br />
-HENRIQUES, 7A <br />
-1900-178, Lisboa <br />
-Portugal <br />
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-<b>EDIT. Porto</b> <br />
-Rua Gonçalo Cristovão <br />
-nº 347, 3º Piso, Sala 302 e 309 <br />
-4000-270, Porto <br />
-Portugal <br />
-</p>
-</p>
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-<b>EDIT. Madrid</b> <br />
-Calle de la Colegiata 9, utopic_US <br />
-28012 Madrid <br />
-Espanha <br />
-</p>
-</td>
-<td width="70"></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_03.jpg" style="display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/>
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-<!-- End of wrapper table -->
-</body>
-</html>';
-
-
-
-wp_mail($emailPost,"Pedido de ".$mailAssunto, $email);
-remove_filter ( 'wp_mail_content_type', 'set_html_content_type' );
-}
-
-
-if ($status) {
-    add_filter( 'wp_mail_content_type', 'set_html_content_type' );
-
-
-    $emailEdit = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Message Subject or Title</title>
-    <style type="text/css">
-    /* Based on The MailChimp Reset INLINE: Yes. */
-    /* Client-specific Styles */
-    #outlook a {
-    padding: 0;
-}
-
-/* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
-.ExternalClass {
-    width: 100%;
-}
-
-    #backgroundTable {
-margin: 0;
-padding: 0;
-width: 100% !important;
-
-}
-
-/* Outlook 07, 10 Padding issue fix
-Bring inline: No.*/
-table td {
-    border-collapse: collapse;
-}
-
-
-/***************************************************
-                    ****************************************************
-MOBILE TARGETING
-                    ****************************************************
-                    ***************************************************/
-@media only screen and (max-device-width: 480px) {
-    /* Part one of controlling phone number linking for mobile. */
-    a[href^="tel"], a[href^="sms"] {
-        text-decoration: none;
-        color: blue; /* or whatever your want */
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-        text-decoration: default;
-        color: orange !important;
-        pointer-events: auto;
-        cursor: default;
-    }
-}
-
-/* More Specific Targeting */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* You guessed it, ipad (tablets, smaller screens, etc) */
-    /* repeating for the ipad */
-    a[href^="tel"], a[href^="sms"] {
-        text-decoration: none;
-        color: blue; /* or whatever your want */
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-        text-decoration: default;
-        color: orange !important;
-        pointer-events: auto;
-        cursor: default;
-    }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    /* Put your iPhone 4g styles in here */
-}
-
-/* Android targeting */
-@media only screen and (-webkit-device-pixel-ratio:.75) {
-    /* Put CSS for low density (ldpi) Android layouts in here */
-}
-
-@media only screen and (-webkit-device-pixel-ratio:1) {
-    /* Put CSS for medium density (mdpi) Android layouts in here */
-}
-
-@media only screen and (-webkit-device-pixel-ratio:1.5) {
-    /* Put CSS for high density (hdpi) Android layouts in here */
-}
-/* end Android targeting */
-</style>
-<!-- Targeting Windows Mobile -->
-<!--[if IEMobile 7]>
-<style type="text/css">
-
-</style>
-<![endif]-->
-<!-- ***********************************************
-                ****************************************************
-END MOBILE TARGETING
-                ****************************************************
-                ************************************************ -->
-<!--[if gte mso 9]>
-<style>
-/* Target Outlook 2007 and 2010 */
-</style>
-<![endif]-->
-</head>
-<body style=" width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
-<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-<tr>
-<td valign="top">
-<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-<table cellpadding="0" cellspacing="0" border="0" align="center" width="700">
-<tr>
-<td>
-<a href="https://edit.com.pt"><img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_01.jpg" style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/></a>
-</td>
-</tr>
-<tr>
-<td>
-<table cellpadding="0" cellspacing="0" width="700" style="text-align: center; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-<tr>
-<td width="70"></td>
-<td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
-<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
-Dados enviados:<br/>
-Url: '. $url.'<br/>'.
-'Nome: '. $name.'<br/>'.
-'Email: '. $emailPost.'<br/>'.
-'Mensagem: '. $messagePost.'<br/>'.
-'Cidade: '. $cidade.'<br/>'.
-'País: '. $pais.'<br/>'.
-'Telefone: '. $telefone.'<br/>'.
-'Formação: '. $course.'<br/>'.
-'Observações: '. $assunto.'<br/>'.
-'Interesses: '. $interests.'<br/>
-</p>
-</td>
-<td width="70"></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_03.jpg" style="display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/>
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-<!-- End of wrapper table -->
-</body>
-</html>';
-
-
-wp_mail($emailsWorkshopForm, "Workshop ".$course. " ".$local, $emailEdit);
-remove_filter ( 'wp_mail_content_type', 'set_html_content_type' );
-}
-
-
-// generate the response
-$response = json_encode( array( 'Status' => $status, 'Message' => $message ) );
-
-// response output
-header( "Content-Type: application/json" );
-
-echo $response;
-// IMPORTANT: don't forget to "exit"
-exit;
-}
-
-function curso_form() {
-
-    global $wpdb;
-    $status = true;
-    $message = 'Pedido de inscrição enviado';
-    $die = check_ajax_referer( 'edit Nonce Registration Form', 'nonce', false);
-
-    if (!$die ) {
-        die('no no no diabito');
-    }
-
-    $email = '';
-
-    $environment = ENVIRONMENT;
-    if ($environment == 'production') {
-        $emailsRegistrationForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
-    } else {
-        $emailsRegistrationForm = 'afbbento@gmail.com';
-    }
-
-
-    // Check obrigatorios
-    if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['telefone']) && isset($_POST['pais']) && isset($_POST['cidade']) && isset($_POST['interests']) && isset($_POST['assunto']) && isset($_POST['url']) ) {
-
-        $name = $_POST['name'];
-        $emailPost =  $_POST['email'];
-        //$bd = $_POST['bd'];
-        $telefone = $_POST['telefone'];
-        $pais = $_POST['pais'];
-        $cidade = $_POST['cidade'];
-        $interests = $_POST['interests'];
-        $assunto = $_POST['assunto'];
-        $course = $_POST['curso'];
-        $messagePost = $_POST['message'];
-        $url = $_POST['url'];
-
-
-
-        //$date = $bd . ' 00:00:00';
-
-        $wpdb->insert(
-            'registration',
-            array(
-                'name' => $name,
-                'email' => $emailPost,
-                'message' => $messagePost,
-                'city' => $cidade,
-                'country' => $pais,
-                'mobile' => $telefone,
-                'course' => $course,
-                'observations' => $assunto,
-                'interests'  => $interests,
-                'url' => $url
-            ),
-            array(
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-                '%s',
-            )
-        );
-
-    } else {
-        $status = false;
-        $message = 'Fields missing';
-    }
-
-    if (!is_email($emailPost)) {
-        $status = false;
-        $message = 'Not a valid email diabito';
-    }
-
-    if ($status) {
-        add_filter( 'wp_mail_content_type', 'set_html_content_type' );
-        $mailAssunto = 'Contacto';
-        if($assunto == 'Informacao'){
-            $mailAssunto = 'informação';
-        }else if($assunto == 'SOPP'){
-            $mailAssunto = 'marcação de SOPP';
-        }
         $email = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
@@ -1281,6 +822,465 @@ function curso_form() {
                     </table>        
             </body>
         </html>';
+
+
+
+wp_mail($emailPost,"Pedido de ".$mailAssunto, $email);
+remove_filter ( 'wp_mail_content_type', 'set_html_content_type' );
+}
+
+
+if ($status) {
+    add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+
+
+    $emailEdit = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Message Subject or Title</title>
+    <style type="text/css">
+    /* Based on The MailChimp Reset INLINE: Yes. */
+    /* Client-specific Styles */
+    #outlook a {
+    padding: 0;
+}
+
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+.ExternalClass {
+    width: 100%;
+}
+
+    #backgroundTable {
+margin: 0;
+padding: 0;
+width: 100% !important;
+
+}
+
+/* Outlook 07, 10 Padding issue fix
+Bring inline: No.*/
+table td {
+    border-collapse: collapse;
+}
+
+
+/***************************************************
+                    ****************************************************
+MOBILE TARGETING
+                    ****************************************************
+                    ***************************************************/
+@media only screen and (max-device-width: 480px) {
+    /* Part one of controlling phone number linking for mobile. */
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+    }
+}
+
+/* More Specific Targeting */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* You guessed it, ipad (tablets, smaller screens, etc) */
+    /* repeating for the ipad */
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    /* Put your iPhone 4g styles in here */
+}
+
+/* Android targeting */
+@media only screen and (-webkit-device-pixel-ratio:.75) {
+    /* Put CSS for low density (ldpi) Android layouts in here */
+}
+
+@media only screen and (-webkit-device-pixel-ratio:1) {
+    /* Put CSS for medium density (mdpi) Android layouts in here */
+}
+
+@media only screen and (-webkit-device-pixel-ratio:1.5) {
+    /* Put CSS for high density (hdpi) Android layouts in here */
+}
+/* end Android targeting */
+</style>
+<!-- Targeting Windows Mobile -->
+<!--[if IEMobile 7]>
+<style type="text/css">
+
+</style>
+<![endif]-->
+<!-- ***********************************************
+                ****************************************************
+END MOBILE TARGETING
+                ****************************************************
+                ************************************************ -->
+<!--[if gte mso 9]>
+<style>
+/* Target Outlook 2007 and 2010 */
+</style>
+<![endif]-->
+</head>
+<body style=" width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
+<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tr>
+<td valign="top">
+<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="700">
+<tr>
+<td>
+<a href="https://edit.com.pt"><img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_01.jpg" style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/></a>
+</td>
+</tr>
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" width="700" style="text-align: center; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tr>
+<td width="70"></td>
+<td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Dados enviados:<br/>
+Url: '. $url.'<br/>'.
+'Nome: '. $name.'<br/>'.
+'Email: '. $emailPost.'<br/>'.
+'Mensagem: '. $messagePost.'<br/>'.
+'Cidade: '. $cidade.'<br/>'.
+'País: '. $pais.'<br/>'.
+'Telefone: '. $telefone.'<br/>'.
+'Formação: '. $course.'<br/>'.
+'Observações: '. $assunto.'<br/>'.
+'Interesses: '. $interests.'<br/>
+</p>
+</td>
+<td width="70"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_03.jpg" style="display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<!-- End of wrapper table -->
+</body>
+</html>';
+
+
+wp_mail($emailsWorkshopForm, "Workshop ".$course. " ".$local, $emailEdit);
+remove_filter ( 'wp_mail_content_type', 'set_html_content_type' );
+}
+
+
+// generate the response
+$response = json_encode( array( 'Status' => $status, 'Message' => $message ) );
+
+// response output
+header( "Content-Type: application/json" );
+
+echo $response;
+// IMPORTANT: don't forget to "exit"
+exit;
+}
+
+function curso_form() {
+
+    global $wpdb;
+    $status = true;
+    $message = 'Pedido de inscrição enviado';
+    $die = check_ajax_referer( 'edit Nonce Registration Form', 'nonce', false);
+
+    if (!$die ) {
+        die('no no no diabito');
+    }
+
+    $email = '';
+
+    $environment = ENVIRONMENT;
+    if ($environment == 'production') {
+        $emailsRegistrationForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
+    } else {
+        $emailsRegistrationForm = 'afbbento@gmail.com';
+    }
+
+
+    // Check obrigatorios
+    if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['telefone']) && isset($_POST['pais']) && isset($_POST['cidade']) && isset($_POST['interests']) && isset($_POST['assunto']) && isset($_POST['url']) ) {
+
+        $name = $_POST['name'];
+        $emailPost =  $_POST['email'];
+        //$bd = $_POST['bd'];
+        $telefone = $_POST['telefone'];
+        $pais = $_POST['pais'];
+        $cidade = $_POST['cidade'];
+        $interests = $_POST['interests'];
+        $assunto = $_POST['assunto'];
+        $course = $_POST['curso'];
+        $messagePost = $_POST['message'];
+        $url = $_POST['url'];
+
+
+
+        //$date = $bd . ' 00:00:00';
+
+        $wpdb->insert(
+            'registration',
+            array(
+                'name' => $name,
+                'email' => $emailPost,
+                'message' => $messagePost,
+                'city' => $cidade,
+                'country' => $pais,
+                'mobile' => $telefone,
+                'course' => $course,
+                'observations' => $assunto,
+                'interests'  => $interests,
+                'url' => $url
+            ),
+            array(
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+                '%s',
+            )
+        );
+
+    } else {
+        $status = false;
+        $message = 'Fields missing';
+    }
+
+    if (!is_email($emailPost)) {
+        $status = false;
+        $message = 'Not a valid email diabito';
+    }
+
+    if ($status) {
+        add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+        $mailAssunto = 'Contacto';
+        if($assunto == 'Informacao'){
+            $mailAssunto = 'informação';
+        }else if($assunto == 'SOPP'){
+            $mailAssunto = 'marcação de SOPP';
+        }
+        $email = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Message Subject or Title</title>
+        <style type="text/css">
+        /* Based on The MailChimp Reset INLINE: Yes. */
+        /* Client-specific Styles */
+    #outlook a {
+        padding: 0;
+    }
+
+    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+    .ExternalClass {
+        width: 100%;
+    }
+
+    #backgroundTable {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    
+}
+
+/* Outlook 07, 10 Padding issue fix
+Bring inline: No.*/
+table td {
+    border-collapse: collapse;
+}
+
+
+/***************************************************
+                    ****************************************************
+MOBILE TARGETING
+                    ****************************************************
+                    ***************************************************/
+@media only screen and (max-device-width: 480px) {
+    /* Part one of controlling phone number linking for mobile. */
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+    }
+}
+
+/* More Specific Targeting */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* You guessed it, ipad (tablets, smaller screens, etc) */
+    /* repeating for the ipad */
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    /* Put your iPhone 4g styles in here */
+}
+
+/* Android targeting */
+@media only screen and (-webkit-device-pixel-ratio:.75) {
+    /* Put CSS for low density (ldpi) Android layouts in here */
+}
+
+@media only screen and (-webkit-device-pixel-ratio:1) {
+    /* Put CSS for medium density (mdpi) Android layouts in here */
+}
+
+@media only screen and (-webkit-device-pixel-ratio:1.5) {
+    /* Put CSS for high density (hdpi) Android layouts in here */
+}
+/* end Android targeting */
+</style>
+<!-- Targeting Windows Mobile -->
+<!--[if IEMobile 7]>
+<style type="text/css">
+
+</style>
+<![endif]-->
+<!-- ***********************************************
+                ****************************************************
+END MOBILE TARGETING
+                ****************************************************
+                ************************************************ -->
+<!--[if gte mso 9]>
+<style>
+/* Target Outlook 2007 and 2010 */
+</style>
+<![endif]-->
+</head>
+<body style=" width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
+<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tr>
+<td valign="top">
+<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="700">
+<tr>
+<td>
+<a href="https://edit.com.pt"><img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_01.jpg" style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/></a>
+</td>
+</tr>
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" width="700" style="text-align: center; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tr>
+<td width="70"></td>
+<td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
+<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> Olá '. $name .',</h1>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Obrigado pelo teu interesse nos Programas e Workshops da EDIT.. Iremos entrar em contato contigo durante as próximas 48 horas.<br />
+</p>
+<p></p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Entretanto, caso necessites de algum de esclarecimento, poderás enviar um email para <a href="mailTo:geral@edit.com.pt">geral@edit.com.pt</a> ou entrar em contacto através de:<br /><br /><br />
+<b>- EDIT. Lisboa</b>: <a href="tel:00351210182455">(+351) 210 182 455,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
+<b>- EDIT. Porto</b>: <a href="tel:00351224960345">(+351) 224 960 345,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Sabe mais sobre a EDIT. e a nossa oferta formativa <a href="https://edit.com.pt/wp-content/uploads/2017/06/EDIT.Presentation.pdf">aqui.</a><br/><br />
+
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Obrigado.
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+<b>EDIT. Lisboa</b> <br />
+ALAMEDA D. AFONSO <br />
+HENRIQUES, 7A <br />
+1900-178, Lisboa <br />
+Portugal <br />
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+<b>EDIT. Porto</b> <br />
+Rua Gonçalo Cristovão <br />
+nº 347, 3º Piso, Sala 302 e 309 <br />
+4000-270, Porto <br />
+Portugal <br />
+</p>
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+<b>EDIT. Madrid</b> <br />
+Calle de la Colegiata 9, utopic_US <br />
+28012 Madrid <br />
+Espanha <br />
+</p>
+</td>
+<td width="70"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_03.jpg" style="display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<!-- End of wrapper table -->
+</body>
+</html>';
 
 
 
