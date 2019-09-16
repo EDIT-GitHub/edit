@@ -62,6 +62,8 @@ endif;
 						<input id="local" name="local" type="hidden" value="<?php echo $localizacao->post_title; ?>"  />
 						<input id="nome" name="name" type="text" data-type="text" placeholder="NOME" autofocus />
 						<input id="email" name="email" type="text" data-type="email" placeholder="EMAIL"  />
+						<input id="post_id" name="post_id" type="hidden"  value="<?php echo $postId; ?>" />
+						
 						<div class="filters-holder">
 							<div class="filter">
 								<?php $formClass = get_field('class', $tipoFormacao); ?>

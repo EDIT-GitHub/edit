@@ -798,12 +798,68 @@ function register_cpt_empresa_recrutamento() {
 
     register_post_type( 'empresa_recrutamento', $args );
 }
+function register_cpt_coordenadores() {
 
+    $labels = array( 
+        'name' => _x( 'Coordenadores', 'coordenadores' ),
+        'singular_name' => _x( 'Coordenador', 'coordenadores' ),
+        'add_new' => _x( 'Adicionar coordenador', 'coordenadores' ),
+        'add_new_item' => _x( 'Adicionar coordenador', 'coordenadores' ),
+        'edit_item' => _x( 'Editar coordenador', 'coordenadores' ),
+        'new_item' => _x( 'Novo coordenador', 'coordenadores' ),
+        'view_item' => _x( 'Ver coordenador', 'coordenadores' ),
+        'search_items' => _x( 'Procurar coordenador', 'coordenadores' ),
+        'not_found' => _x( 'Nenhum coordenador encontrado', 'coordenadores' ),
+        'not_found_in_trash' => _x( 'Nenhuma NL encontrada no lixo', 'coordenadores' ),
+        'parent_item_colon' => _x( 'Coordenador Pai:', 'coordenadores' ),
+        'menu_name' => _x( 'Coordenadores', 'coordenadores' ),
+    );
+
+    $args = array( 
+        'labels' => $labels,
+        'hierarchical' => true,
+        'supports' => array('title', 'page-attributes', 'revisions'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 20,
+        'hierarchical' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => false,
+        'query_var' => true,
+        'can_export' => true,
+        'capability_type' => 'page'
+    );
+    $labels = array(
+        'name' => _x( 'Área', 'taxonomy general name' ),
+        'singular_name' => _x( 'Área', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search Types' ),
+        'all_items' => __( 'All Área' ),
+        'parent_item' => __( 'Parent Área' ),
+        'parent_item_colon' => __( 'Parent Área:' ),
+        'edit_item' => __( 'Edit Área' ), 
+        'update_item' => __( 'Update Área' ),
+        'add_new_item' => __( 'Add New Área' ),
+        'new_item_name' => __( 'New Área Name' ),
+        'menu_name' => __( 'Áreas' ),
+      ); 	
+     
+      register_taxonomy('area',array('coordenadores'), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'area' ),
+      ));
+    register_post_type( 'coordenadores', $args );
+}
 function register_custom_post_types() {
     register_cpt_slider();
     register_cpt_noticias();
 
-    
     register_cpt_formacao();
     register_cpt_formacao_tipo();
     register_cpt_formacao_horarios();
@@ -830,6 +886,10 @@ function register_custom_post_types() {
     //Recrutamento
     register_cpt_recrutamento();
     register_cpt_empresa_recrutamento();
+
+    //Coordenadores
+    register_cpt_coordenadores();
+   
 }
 
 add_action( 'init', 'register_custom_post_types' );
