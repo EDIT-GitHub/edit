@@ -730,7 +730,7 @@ function workshop_form() {
                                                             </tbody>
                                                         </table>';
 
-                                                        $newsletter_carreiras = get_field('newsletter_carreiras', 36775);
+                                                        $newsletter_carreiras = get_field('newsletter_carreiras', $post_id);
 
 
                                                             if( $newsletter_carreiras ): 
