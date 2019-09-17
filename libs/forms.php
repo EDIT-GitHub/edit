@@ -109,30 +109,30 @@ function workshop_form() {
         foreach( $tipo_formacao as $p2):
             $tipo_formacao = get_the_title($p2->ID);
         endforeach; 
+        
 
-        $area = $tipo_formacao;
         $args = array(
             'numberposts'	=> 1,
             'post_type'		=> 'coordenadores',
             'tax_query' => array(
                 array(
                 'taxonomy' => 'area',
-                'terms'    => $area
+                'terms'    => $tipo_formacao
                 ),
             ),
         );
         $the_query = new WP_Query( $args );
-
+        
         if( $the_query->have_posts() ):
             while( $the_query->have_posts() ) : $the_query->the_post();
-                $nome_colaborador = the_title(); 
+                $nome_colaborador = get_the_title();
                 $avatar_colaborador = get_field('avatar');
                 $email_colaborador = get_field('email');
                 $telefone_colaborador = get_field('telefone');                               
             endwhile;
         endif;
         wp_reset_query();	
-      
+       
         $email = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
@@ -307,7 +307,7 @@ function workshop_form() {
                                                             <tbody >
                                                                 <tr>
                                                                     <td style="padding: 35px 80px 0;font-family: Helvetica, Arial;color: #8d8d8d;font-size: 16px;font-weight: normal;" class="content-wrapper">
-                                                                       Obrigado pelo teu interesse nos programas e Workshops da EDIT.
+                                                                       Obrigado pelo teu interesse no '.$course.'.
                                                                         <br><span style="color:#000000">Iremos entrar em contacto contigo durante as próximas 48 horas.</span>
                                                                         <br><br>                                                               
                                                                         Entretanto caso necessites de algum esclarecimento não hesites em entrar em contacto comigo.
@@ -544,13 +544,25 @@ function workshop_form() {
                                                                                         foreach( $tipo_formacao as $p2):
                                                                                             $tipo_formacao_title = get_the_title($p2->ID);
                                                                                         endforeach;
-                                                                                
+                                                                                        
+                                                                                        switch ($tipo_formacao) {
+                                                                                            case 'Workshops':
+                                                                                                $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/workshop.png';
+                                                                                                break;
+                                                                                            case 'Curso/Programa':
+                                                                                                $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/programas.png';
+                                                                                                break;
+                                                                                            case 'Curso Intensivo':
+                                                                                                $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/intensivo.png';
+                                                                                                break;
+                                                                                        }
+                                                                                        
                                                                                     $email .= '<td valign="top" width="50%">
                                                                                         <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td valign="top">
-                                                                                                        <img align="center" alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/workshop.png" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                                                        <img align="center" alt="" src="'.$logo_formacao.'" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
