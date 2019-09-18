@@ -132,7 +132,59 @@ function workshop_form() {
             endwhile;
         endif;
         wp_reset_query();	
-       
+        if ($environment != 'production') {
+            $avatar_colaborador = 'https://edit.com.pt/wp-content/uploads/2019/09/coordenador.jpg';
+        }
+        
+        $dia = date("j");
+        $month = date("n");        
+        $ano = date("Y");
+                
+        switch ($month) {
+            case '1':
+                $mes_pt = 'Janeiro';                
+                break;
+            case '2':
+                $mes_pt = 'Fevereiro';   
+                break;
+            case '3':
+                $mes_pt = 'Março';
+                break;
+            case '4':
+                $mes_pt = 'Abril';
+                break;
+            case '5':
+                $mes_pt = 'Maio';
+                break;
+            case '6':
+                $mes_pt = 'Junho';
+                break;
+            case '7':
+                $mes_pt = 'Julho';
+                break;
+            case '8':
+                $mes_pt = 'Agosto';
+                break;
+            case '9':
+                $mes_pt = 'Setembro';
+                break;
+            case '10':
+                $mes_pt = 'Outubro';
+                break;
+            case '11':
+                $mes_pt = 'Novembro';
+                break;
+            case '12':
+                $mes_pt = 'Dezembro';
+                break;                
+        }
+
+        $data_actual = $dia.' '.$mes_pt.', '.$ano;
+        $pronta_enviar = get_field('pronta_a_enviar', $post_id);
+
+        if ($pronta_enviar == '1'){
+        
+
         $email = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
@@ -237,7 +289,7 @@ function workshop_form() {
                                                                                          <img alt="" src="https://edit.com.pt/wp-content/themes/edit/newsletter-edit/logo-edit.png" width="153" style="max-width:153px; padding-bottom: 0; display: inline !important; vertical-align: bottom;">                                                                               
                                                                                     </td>
                                                                                     <td valign="middle" style="text-align: right;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;color: #828282;">
-                                                                                        '.date("j F, Y ").'                                                                              
+                                                                                        '.$data_actual.'                                                                              
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -307,7 +359,7 @@ function workshop_form() {
                                                             <tbody >
                                                                 <tr>
                                                                     <td style="padding: 35px 80px 0;font-family: Helvetica, Arial;color: #8d8d8d;font-size: 16px;font-weight: normal;" class="content-wrapper">
-                                                                       Obrigado pelo teu interesse no '.$course.'.
+                                                                       Obrigado pelo teu interesse no '.$tipo_formacao.' de '.$course.'.
                                                                         <br><span style="color:#000000">Iremos entrar em contacto contigo durante as próximas 48 horas.</span>
                                                                         <br><br>                                                               
                                                                         Entretanto caso necessites de algum esclarecimento não hesites em entrar em contacto comigo.
@@ -443,7 +495,10 @@ function workshop_form() {
                                                                     }
                                                                    
                                                                }
-                                                                
+                                                               if ($environment != 'production') {
+                                                                    $bg_noticia = 'https://edit.com.pt/wp-content/uploads/2017/06/180-Creative-Camp.jpg';
+                                                                }
+                                                            
                                                                 $email .= '<table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tbody>
                                                                     <tr>
@@ -467,7 +522,7 @@ function workshop_form() {
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td valign="top" style="padding:30px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
-                                                                                            '.$short_text.'
+                                                                                            '.strip_tags($short_text).'
                                                                                         </td> 
                                                                                     </tr>
                                                                                     <tr>
@@ -527,7 +582,7 @@ function workshop_form() {
                                                                                     $n_formacao = 0;
                                                                                     foreach( $formacoes as $p):
                                                                                         
-                                                                                        $title_formacao = get_the_title($p->ID);
+                                                                                        $title_formacao = get_field('titulo', $p->ID); 
                                                                                         $link_formacao = get_permalink( $p->ID );                                                                                        
                                                                                         
 
@@ -545,15 +600,18 @@ function workshop_form() {
                                                                                             $tipo_formacao_title = get_the_title($p2->ID);
                                                                                         endforeach;
                                                                                         
-                                                                                        switch ($tipo_formacao) {
-                                                                                            case 'Workshops':
+                                                                                        switch ($tipo_formacao_title) {
+                                                                                            case 'Workshop':
                                                                                                 $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/workshop.png';
+                                                                                                $cor_formacao = '#65c4b3';
                                                                                                 break;
                                                                                             case 'Curso/Programa':
                                                                                                 $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/programas.png';
+                                                                                                $cor_formacao = '#EAD23F';
                                                                                                 break;
                                                                                             case 'Curso Intensivo':
                                                                                                 $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/intensivo.png';
+                                                                                                $cor_formacao = '#e98375';
                                                                                                 break;
                                                                                         }
                                                                                         
@@ -566,22 +624,22 @@ function workshop_form() {
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td valign="top" style="font-family: Helvetica, Arial; padding-top: 25px;padding-bottom: 5px;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial; padding-top: 25px;padding-bottom: 5px;color: '.$cor_formacao.';font-size: 16px;font-weight: normal;">
                                                                                                         '.$tipo_formacao_title.'
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: #65c4b3;font-size: 20px;font-weight: normal;">
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: '.$cor_formacao.';font-size: 20px;font-weight: normal;">
                                                                                                         '.$title_formacao.'
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;" class="alumni-name">
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;color: '.$cor_formacao.';font-size: 16px;font-weight: normal;" class="alumni-name">
                                                                                                         '.$data_formacao.'
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td valign="top" style="padding-top: 25px;font-family: Helvetica, Arial;color: #65c4b3;font-size: 16px;font-weight: normal;">
+                                                                                                    <td valign="top" style="padding-top: 25px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;">
                                                                                                         <a href="'.$link_formacao.'" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;text-decoration: none;color:#000000;"><span style=" color: #8d8d8d;">•</span> Mais informações</a>
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
@@ -674,7 +732,19 @@ function workshop_form() {
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td valign="top">
-                                                                                                        <img align="center" alt="" src="'.$foto.'" style="width: 100%;padding-bottom: 0; display: inline !important; vertical-align: bottom;">
+                                                                                                        <table align="right" border="0" cellpadding="0" cellspacing="0" width="250px">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="width: 250px;
+                                                                                                                    background-image: url('.$foto.');
+                                                                                                                    height: 250px;
+                                                                                                                    background-size: auto 100%;
+                                                                                                                    background-position: top right !important;">
+                                                                                                                        <span></span>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
@@ -756,10 +826,13 @@ function workshop_form() {
                                                                         $foto_carreira = get_field('fundo_header', $p->ID);                                                          
                                                                     }
                                                                     
-                                                                    $split_carreira = get_field('titulo_bold_noticia_carreiras', $post_id);
+                                                                    if(get_field('subtitulo', $p->ID)){                                                       
+                                                                        
+                                                                        $subtitulo_carreira = get_field('subtitulo', $p->ID);                                                          
+                                                                    }
 
                                                                     $titulo_carreira = get_the_title( $p->ID );
-                                                                    $split_titulo_carreira =  split2($titulo_carreira,' ', $palavras_bold);
+                                                                  
                                                                     if( have_rows('blocos_profissoes', $p->ID) ):
                                                                         while ( have_rows('blocos_profissoes', $p->ID) ) : the_row();                                                             
                                                                             if( get_row_layout() == 'header' ):                                                                
@@ -770,6 +843,10 @@ function workshop_form() {
                                                                                                                                     
                                                                 endforeach; 
                                                             endif;
+                                                            if ($environment != 'production') {
+                                                                $foto_carreira = 'https://edit.com.pt/wp-content/uploads/2018/07/digital_marketer.jpg';
+                                                            }
+                                                            
                                                         $email .= '
                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                             <tbody>
@@ -784,12 +861,12 @@ function workshop_form() {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td valign="top" style="font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: bold;font-style: normal;">                                                                                
-                                                                                        '.$split_carreira[0].'
+                                                                                        '.$titulo_carreira.'
                                                                                     </td> 
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td valign="top" style="font-family: Helvetica, Arial;color:#000000; font-family: Helvetica, Arial;font-size: 30px;font-weight: 300;font-style: normal;">                                                                                
-                                                                                        '.$split_carreira[1].'
+                                                                                        '.$subtitulo_carreira.'
                                                                                     </td> 
                                                                                 </tr>
                                                                                 <tr>
@@ -894,6 +971,195 @@ function workshop_form() {
             </body>
         </html>';
 
+                                                        }else{
+
+                                                            $email = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Message Subject or Title</title>
+        <style type="text/css">
+        /* Based on The MailChimp Reset INLINE: Yes. */
+        /* Client-specific Styles */
+    #outlook a {
+        padding: 0;
+    }
+
+    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+    .ExternalClass {
+        width: 100%;
+    }
+
+    #backgroundTable {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    
+}
+
+/* Outlook 07, 10 Padding issue fix
+Bring inline: No.*/
+table td {
+    border-collapse: collapse;
+}
+
+
+/***************************************************
+                    ****************************************************
+MOBILE TARGETING
+                    ****************************************************
+                    ***************************************************/
+@media only screen and (max-device-width: 480px) {
+    /* Part one of controlling phone number linking for mobile. */
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+    }
+}
+
+/* More Specific Targeting */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* You guessed it, ipad (tablets, smaller screens, etc) */
+    /* repeating for the ipad */
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    /* Put your iPhone 4g styles in here */
+}
+
+/* Android targeting */
+@media only screen and (-webkit-device-pixel-ratio:.75) {
+    /* Put CSS for low density (ldpi) Android layouts in here */
+}
+
+@media only screen and (-webkit-device-pixel-ratio:1) {
+    /* Put CSS for medium density (mdpi) Android layouts in here */
+}
+
+@media only screen and (-webkit-device-pixel-ratio:1.5) {
+    /* Put CSS for high density (hdpi) Android layouts in here */
+}
+/* end Android targeting */
+</style>
+<!-- Targeting Windows Mobile -->
+<!--[if IEMobile 7]>
+<style type="text/css">
+
+</style>
+<![endif]-->
+<!-- ***********************************************
+                ****************************************************
+END MOBILE TARGETING
+                ****************************************************
+                ************************************************ -->
+<!--[if gte mso 9]>
+<style>
+/* Target Outlook 2007 and 2010 */
+</style>
+<![endif]-->
+</head>
+<body style=" width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;">
+<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tr>
+<td valign="top">
+<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="700">
+<tr>
+<td>
+<a href="https://edit.com.pt"><img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_01.jpg" style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/></a>
+</td>
+</tr>
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" width="700" style="text-align: center; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tr>
+<td width="70"></td>
+<td width="560" style="text-align: left; padding-top: 40px; padding-bottom: 210px;">
+<h1 style="width: 560px; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 24px; color:#000000; line-height: 24px;"> Olá '. $name .',</h1>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Obrigado pelo teu interesse nos Programas e Workshops da EDIT.. Iremos entrar em contato contigo durante as próximas 48 horas.<br />
+</p>
+<p></p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Entretanto, caso necessites de algum de esclarecimento, poderás enviar um email para <a href="mailTo:geral@edit.com.pt">geral@edit.com.pt</a> ou entrar em contacto através de:<br /><br /><br />
+<b>- EDIT. Lisboa</b>: <a href="tel:00351210182455">(+351) 210 182 455,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
+<b>- EDIT. Porto</b>: <a href="tel:00351224960345">(+351) 224 960 345,</a> entre as 10h e as 19h, de 2ª a 6ª.<br />
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Sabe mais sobre a EDIT. e a nossa oferta formativa <a href="https://edit.com.pt/wp-content/uploads/2017/06/EDIT.Presentation.pdf">aqui.</a><br/><br />
+
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+Obrigado.
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+<b>EDIT. Lisboa</b> <br />
+ALAMEDA D. AFONSO <br />
+HENRIQUES, 7A <br />
+1900-178, Lisboa <br />
+Portugal <br />
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+<b>EDIT. Porto</b> <br />
+Rua Gonçalo Cristovão <br />
+nº 347, 3º Piso, Sala 302 e 309 <br />
+4000-270, Porto <br />
+Portugal <br />
+</p>
+</p>
+<p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
+<b>EDIT. Madrid</b> <br />
+Calle de la Colegiata 9, utopic_US <br />
+28012 Madrid <br />
+Espanha <br />
+</p>
+</td>
+<td width="70"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://edit.com.pt/wp-content/themes/edit/images/mail/template_mail_03.jpg" style="display: block; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; "/>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<!-- End of wrapper table -->
+</body>
+</html>';
+
+
+                                                        }
 
 
 wp_mail($emailPost,"Pedido de ".$mailAssunto, $email);

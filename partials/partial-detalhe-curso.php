@@ -65,7 +65,7 @@ endif;
 						<input id="post_id" name="post_id" type="hidden"  value="<?php echo $postId; ?>" />
 						
 						<div class="filters-holder">
-							<div class="filter">
+							<div class="filter" style="display:none;margin-bottom: -10px;">
 								<?php $formClass = get_field('class', $tipoFormacao); ?>
 								<select id="assunto" data-exterior-label="Curso" name="assunto">
 									<?php if ($formClass == 'workshop') { ?>
@@ -153,19 +153,13 @@ endif;
 	var cursoN = '<?php echo wp_create_nonce("edit Nonce Registration Form"); ?>';
 	var form_sucesso = "<?php dictionary("Pedido_enviado_com_sucesso") ?>";
 	jQuery(document).ready(function ($) {
+		
 		<?php
-		$type = '';
-		if($formClass == 'workshop'):
-			$type = $formClass;
-		else:
-			$type = 'curso';
-		endif;
-		?>
-		<?php
-		if ($type == 'workshop'): ?>
+		
+		if ($pronta_enviar == '1'): ?>
 			Edit.modules.collection.push({ type: 'formModal', instance: new Edit.modules.formModal('.js-formmodal', 'workshop_form','<?php echo $type; ?>',"<?php the_title(); ?>") });
 			<?php else: ?>
-				Edit.modules.collection.push({ type: 'formModal', instance: new Edit.modules.formModal('.js-formmodal', 'curso_form','<?php echo $type; ?>',"<?php the_title(); ?>") });
+				Edit.modules.collection.push({ type: 'formModal', instance: new Edit.modules.formModal('.js-formmodal', 'workshop_form','<?php echo $type; ?>',"<?php the_title(); ?>") });
 			<?php endif; ?>
 		})
 	</script>
