@@ -61,7 +61,7 @@ endif;
 						<input id="curso" name="curso" type="hidden" value="<?php the_field('titulo'); ?>"  />
 						<input id="local" name="local" type="hidden" value="<?php echo $localizacao->post_title; ?>"  />
 						<input id="nome" name="name" type="text" data-type="text" placeholder="NOME" autofocus />
-						<input id="email" name="email" type="text" data-type="email" placeholder="EMAIL"  />
+						<input id="email" name="email" type="text" data-type="email" placeholder="EMAIL" />
 						<input id="post_id" name="post_id" type="hidden"  value="<?php echo $postId; ?>" />
 						
 						<div class="filters-holder">
@@ -153,15 +153,8 @@ endif;
 	var cursoN = '<?php echo wp_create_nonce("edit Nonce Registration Form"); ?>';
 	var form_sucesso = "<?php dictionary("Pedido_enviado_com_sucesso") ?>";
 	jQuery(document).ready(function ($) {
-		
-		<?php
-		
-		if ($pronta_enviar == '1'): ?>
-			Edit.modules.collection.push({ type: 'formModal', instance: new Edit.modules.formModal('.js-formmodal', 'workshop_form','<?php echo $type; ?>',"<?php the_title(); ?>") });
-			<?php else: ?>
-				Edit.modules.collection.push({ type: 'formModal', instance: new Edit.modules.formModal('.js-formmodal', 'workshop_form','<?php echo $type; ?>',"<?php the_title(); ?>") });
-			<?php endif; ?>
-		})
+			Edit.modules.collection.push({ type: 'formModal', instance: new Edit.modules.formModal('.js-formmodal', 'workshop_form') });		
+		});
 	</script>
 	<!-- END FORM MODAL MODULE -->
 	<!-- HEADER MODULE -->

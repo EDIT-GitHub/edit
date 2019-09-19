@@ -98,11 +98,7 @@ function workshop_form() {
     if ($status) {
         add_filter( 'wp_mail_content_type', 'set_html_content_type' );
         $mailAssunto = 'Contacto';
-        if($assunto == 'Informacao'){
-            $mailAssunto = 'informação';
-        }else if($assunto == 'SOPP'){
-            $mailAssunto = 'marcação de SOPP';
-        }
+       
         
         $tipo_formacao = get_field('tipo_formacao', $post_id);        
 
@@ -522,7 +518,7 @@ function workshop_form() {
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td valign="top" style="padding:30px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
-                                                                                            '.strip_tags($short_text).'
+                                                                                            '.strip_tags($short_text).'.
                                                                                         </td> 
                                                                                     </tr>
                                                                                     <tr>

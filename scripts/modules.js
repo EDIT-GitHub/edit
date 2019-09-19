@@ -2384,7 +2384,7 @@ formModal: function (elemClass, action,type,name) {
         _this.isSending = true;
 
         $.ajax({
-          url: '/edit/wp-admin/admin-ajax.php',
+          url: '/wp-admin/admin-ajax.php',
           method: 'post',
           data: _this.formData,
           dataType: 'json',
