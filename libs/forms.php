@@ -109,10 +109,12 @@ function workshop_form() {
 
         $args = array(
             'numberposts'	=> 1,
+            'posts_per_page' => 1,
             'post_type'		=> 'coordenadores',
             'tax_query' => array(
                 array(
                 'taxonomy' => 'area',
+                'field' => 'name',
                 'terms'    => $tipo_formacao
                 ),
             ),
@@ -473,8 +475,15 @@ function workshop_form() {
                                                             foreach( $noticias as $p): 
                                                                 $titulo_noticia = get_the_title( $p->ID );
                                                                 $split =  split2($titulo_noticia,' ', $palavras_bold);
-
-                                                                $bg_noticia = get_field("fundo_header", $p->ID); 
+                                                                
+                                                                $bg_noticia_newsletter = get_field("imagem_newsletter", $p->ID); 
+                                                                if ($bg_noticia_newsletter ==''){
+                                                                    $bg_noticia = get_field("fundo_header", $p->ID);
+                                                                }else{
+                                                                    $bg_noticia = $bg_noticia_newsletter;
+                                                                }
+                                                                 
+                                                                
                                                                 $link_noticia = get_permalink( $p->ID );
                                                                 if(get_field("blocos", $p->ID)){
           
@@ -491,9 +500,7 @@ function workshop_form() {
                                                                     }
                                                                    
                                                                }
-                                                               if ($environment != 'production') {
-                                                                    $bg_noticia = 'https://edit.com.pt/wp-content/uploads/2017/06/180-Creative-Camp.jpg';
-                                                                }
+                                                              
                                                             
                                                                 $email .= '<table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tbody>
@@ -816,12 +823,14 @@ function workshop_form() {
                                                                 foreach( $newsletter_carreiras as $p): 
                                                                         
                                                                     $link_carreira = get_permalink( $p->ID );
-                                                                    
-                                                                    if(get_field('fundo_header', $p->ID)){                                                       
-                                                                        
-                                                                        $foto_carreira = get_field('fundo_header', $p->ID);                                                          
+                                                                                                                                   
+                                                                    $bg_carreira_newsletter = get_field("imagem_newsletter", $p->ID); 
+                                                                    if ($bg_carreira_newsletter ==''){
+                                                                        $foto_carreira = get_field("fundo_header", $p->ID);
+                                                                    }else{
+                                                                        $foto_carreira = $bg_carreira_newsletter;
                                                                     }
-                                                                    
+
                                                                     if(get_field('subtitulo', $p->ID)){                                                       
                                                                         
                                                                         $subtitulo_carreira = get_field('subtitulo', $p->ID);                                                          
@@ -839,9 +848,7 @@ function workshop_form() {
                                                                                                                                     
                                                                 endforeach; 
                                                             endif;
-                                                            if ($environment != 'production') {
-                                                                $foto_carreira = 'https://edit.com.pt/wp-content/uploads/2018/07/digital_marketer.jpg';
-                                                            }
+                                                            
                                                             
                                                         $email .= '
                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -867,7 +874,7 @@ function workshop_form() {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td valign="top" style="padding-top:30px; padding-bottom: 30px; font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
-                                                                                        '.$texto_carreira.'
+                                                                                        '.strip_tags($texto_carreira).'.
                                                                                     </td> 
                                                                                 </tr>
                                                                                 <tr>
