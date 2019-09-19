@@ -1367,7 +1367,7 @@ function curso_form() {
 
     $environment = ENVIRONMENT;
     if ($environment == 'production') {
-        $emailsRegistrationForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
+        $emailsRegistrationForm = 'geral@edit.com.pt,eva.pinho@edit.com.pt, joana.morujo@edit.com.pt';
     } else {
         $emailsRegistrationForm = 'afbbento@gmail.com';
     }
@@ -3507,7 +3507,7 @@ function info_form() {
 
     $environment = ENVIRONMENT;
     if ($environment == 'production') {
-        $emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, catia.pereira@edit.com.pt';
+        $emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, joana.morujo@edit.com.pt';
     } else {
         $emailsInfoForm = 'afbbento@gmail.com';
     }
@@ -4129,4 +4129,4 @@ function split2($string,$needle,$nth){
     $arr[] = substr($string,$i+1,$max);
     
     return $arr;
-}
+} 
