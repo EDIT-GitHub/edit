@@ -358,7 +358,7 @@ function workshop_form() {
                                                                 <tr>
                                                                     <td style="padding: 35px 80px 0;font-family: Helvetica, Arial;color: #8d8d8d;font-size: 16px;font-weight: normal;" class="content-wrapper">
                                                                        Obrigado pelo teu interesse no '.$tipo_formacao.' de '.$course.'.
-                                                                        <br><span style="color:#000000">Iremos entrar em contacto contigo durante as próximas 48 horas.</span>
+                                                                        <br><span style="color:#000000">Iremos entrar em contacto contigo durante as próximas 48 horas úteis.</span>
                                                                         <br><br>                                                               
                                                                         Entretanto caso necessites de algum esclarecimento não hesites em entrar em contacto comigo.
                                                                         <br><br>  

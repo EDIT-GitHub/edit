@@ -155,4 +155,27 @@ function custom_mime_types($mime_types){
     }
 endif;
 add_action( 'after_setup_theme', 'theme_setup' );
+
+function preview_newsletter($wp_admin_bar) {
+	$queryParam = (int) '1';
+	$queryParamEncoded = urlencode($queryParam);
+	$currentUrl = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+	//$reinsertUrlWithParam = add_query_arg('cccclr', $queryParamEncoded, $currentUrl);
+    
+    $post_id = $_GET['post'];
+    
+    $reinsertUrlWithParam = "/newsletter.php?id=".$post_id;
+    
+    $args = array(
+		'id'    => 'preview_nl',
+		'title' => 'Preview Newsletter',
+		'href'  => $reinsertUrlWithParam,
+		'meta'  => array(
+            'class' => 'nl-preview',
+            'target' => '_blank'
+		)
+	);
+	$wp_admin_bar->add_node($args);
+}
+add_action('admin_bar_menu', 'preview_newsletter', 100);
 ?>
