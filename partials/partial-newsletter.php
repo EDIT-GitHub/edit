@@ -18,6 +18,7 @@ foreach( $tipo_formacao as $p2):
     $tipo_formacao = get_the_title($p2->ID);
 endforeach; 
 
+$course = get_field('titulo', $post_id); 
 
 $args = array(
     'numberposts'	=> 1,

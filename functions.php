@@ -164,18 +164,21 @@ function preview_newsletter($wp_admin_bar) {
     
     $post_id = $_GET['post'];
     
-    $reinsertUrlWithParam = "/newsletter.php?id=".$post_id;
-    
+    $reinsertUrlWithParam = "/newsletter/?id=".$post_id;
+    $post_t = get_post_type();
     $args = array(
 		'id'    => 'preview_nl',
 		'title' => 'Preview Newsletter',
 		'href'  => $reinsertUrlWithParam,
 		'meta'  => array(
-            'class' => 'nl-preview',
+            'class' => $post_t,
             'target' => '_blank'
 		)
-	);
-	$wp_admin_bar->add_node($args);
+    );
+    if ($post_t=='formacao'){
+        $wp_admin_bar->add_node($args);
+    }
+	
 }
 add_action('admin_bar_menu', 'preview_newsletter', 100);
 ?>
