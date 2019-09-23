@@ -28,13 +28,7 @@ function workshop_form() {
 
     $email = '';
 
-    $environment = ENVIRONMENT;
-    if ($environment == 'production') {
-        $emailsWorkshopForm = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
-    } else {
-        $emailsWorkshopForm = 'afbbento@gmail.com';
-    }
-
+    
 
     // Check obrigatorios
     if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['telefone']) && isset($_POST['pais']) && isset($_POST['cidade']) && isset($_POST['interests']) && isset($_POST['assunto']) && isset($_POST['url']) ) {
@@ -106,6 +100,18 @@ function workshop_form() {
             $tipo_formacao = get_the_title($p2->ID);
         endforeach; 
         
+        $environment = ENVIRONMENT;
+        if ($environment == 'production') {
+            if ($tipo_formacao=='Workshop'){
+                $emailsWorkshopForm = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
+            }else{
+                $emailsWorkshopForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, joana.morujo@edit.com.pt';
+            }
+            
+        } else {
+            $emailsWorkshopForm = 'afbbento@gmail.com';
+        }
+
 
         $args = array(
             'numberposts'	=> 1,
