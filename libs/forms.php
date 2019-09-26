@@ -99,6 +99,12 @@ function workshop_form() {
         foreach( $tipo_formacao as $p2):
             $tipo_formacao = get_the_title($p2->ID);
         endforeach; 
+
+        $local_formacao = get_field('localizacao', $post_id);        
+
+        foreach( $local_formacao as $p2):
+            $local_formacao_ID = $p2->ID;
+        endforeach; 
         
         $environment = ENVIRONMENT;
         if ($environment == 'production') {
@@ -118,12 +124,20 @@ function workshop_form() {
             'posts_per_page' => 1,
             'post_type'		=> 'coordenadores',
             'tax_query' => array(
+                'relation' => 'AND',
                 array(
-                'taxonomy' => 'area',
-                'field' => 'name',
-                'terms'    => $tipo_formacao
-                ),
+                    'taxonomy' => 'area',
+                    'field' => 'name',
+                    'terms'    => $tipo_formacao
+                ),                
             ),
+            'meta_query' => array(
+                array(
+                    'key' => 'localizacao', 
+                    'value' => $local_formacao_ID, 
+                    'compare' => 'LIKE'
+                )
+            )
         );
         $the_query = new WP_Query( $args );
         
