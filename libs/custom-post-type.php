@@ -832,6 +832,7 @@ function register_cpt_coordenadores() {
         'can_export' => true,
         'capability_type' => 'page'
     );
+    /*
     $labels = array(
         'name' => _x( 'Área', 'taxonomy general name' ),
         'singular_name' => _x( 'Área', 'taxonomy singular name' ),
@@ -854,6 +855,7 @@ function register_cpt_coordenadores() {
         'query_var' => true,
         'rewrite' => array( 'slug' => 'area' ),
       ));
+      */
     register_post_type( 'coordenadores', $args );
 }
 function register_custom_post_types() {
