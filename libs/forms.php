@@ -114,6 +114,9 @@ function workshop_form() {
             }else{
                 $emailsWorkshopForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, joana.morujo@edit.com.pt';
             }
+            if ($emailPost=='afbbento@gmail.com'){
+                $emailsWorkshopForm = 'afbbento@gmail.com';
+            }
             
         } else {
             $emailsWorkshopForm = 'afbbento@gmail.com';
@@ -153,6 +156,9 @@ function workshop_form() {
             $avatar_colaborador = 'https://edit.com.pt/wp-content/uploads/2019/09/coordenador.jpg';
         }
         
+        $url_key = 'wM3fJ4Y2';
+        $encode_post_id = $url_key.strtr(base64_encode($post_id), '+/=', '._-');
+
         $dia = date("j");
         $month = date("n");        
         $ano = date("Y");
@@ -198,6 +204,9 @@ function workshop_form() {
 
         $data_actual = $dia.' '.$mes_pt.', '.$ano;
         $pronta_enviar = get_field('pronta_a_enviar', $post_id);
+
+        $encode_post_id = $url_key.strtr(base64_encode($post_id), '+/=', '._-');
+        $encode_url_name = strtr(base64_encode($name), '+/=', '._-');
 
         if ($pronta_enviar == '1'){
         
@@ -269,6 +278,17 @@ function workshop_form() {
                         <tr>
                             <td align="center" valign="top">
                                 <!-- BEGIN TEMPLATE // -->
+                                <p style="
+                            font-size: 12px;
+                            font-family: arial;
+                            padding: 18px 80px 0;
+                            font-family: Helvetica, Arial;
+                            color: #8d8d8d;
+                            font-size: 11px;
+                            font-weight: normal;
+                                ">Não consegues visualizar esta mensagem? <span style="
+                            text-decoration: underline;
+                        "><a style="color: #8d8d8d;"href="https://edit.com.pt/newsletter-preview/?id='.$encode_post_id.'&n_name='.$encode_url_name.'">Clica aqui</a></span></p>
                                 <table border="0" cellpadding="0" cellspacing="0" style="border: 1px solid #D8D8D8;max-width: 700px;">                            
                                     <tr>
                                         <td align="center" valign="top">
@@ -513,7 +533,7 @@ function workshop_form() {
                                                                                 
                                                                         foreach($tipo_bloco as $tipos_blocos){
                                                                         $texto = $tipos_blocos['texto'];                     
-                                                                        $var = explode('.', $texto);
+                                                                        $var = explode('.', strip_tags($texto));
                                                                         $short_text = $var[0];
                                                                         }
                                                                     }
@@ -1354,7 +1374,7 @@ Url: '. $url.'<br/>'.
 </html>';
 
 
-wp_mail($emailsWorkshopForm, "Workshop ".$course. " ".$local, $emailEdit);
+wp_mail($emailsWorkshopForm, $tipo_formacao_title." ".strip_tags($course). " ".$local, $emailEdit);
 remove_filter ( 'wp_mail_content_type', 'set_html_content_type' );
 }
 

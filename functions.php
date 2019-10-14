@@ -164,7 +164,10 @@ function preview_newsletter($wp_admin_bar) {
     
     $post_id = $_GET['post'];
     
-    $reinsertUrlWithParam = "/newsletter/?id=".$post_id;
+    $url_key = 'wM3fJ4Y2';
+    $encode_post_id = $url_key.strtr(base64_encode($post_id), '+/=', '._-');
+
+    $reinsertUrlWithParam = "/newsletter/?id=".$encode_post_id;
     $post_t = get_post_type();
     $args = array(
 		'id'    => 'preview_nl',
@@ -181,4 +184,11 @@ function preview_newsletter($wp_admin_bar) {
 	
 }
 add_action('admin_bar_menu', 'preview_newsletter', 100);
+
+
+function wwp_custom_query_vars_filter($vars) {
+    $vars[] .= 'n_name';
+    return $vars;
+}
+add_filter( 'query_vars', 'wwp_custom_query_vars_filter' );
 ?>

@@ -19,18 +19,35 @@ foreach( $tipo_formacao as $p2):
 endforeach; 
 
 $course = get_field('titulo', $post_id); 
+$tipo_formacao = get_field('tipo_formacao', $post_id);        
 
+        foreach( $tipo_formacao as $p2):
+            $tipo_formacao = get_the_title($p2->ID);
+            $tipo_formacao_ID = $p2->ID;
+        endforeach; 
+
+        $local_formacao = get_field('localizacao', $post_id);        
+
+        foreach( $local_formacao as $p2):
+            $local_formacao_ID = $p2->ID;
+        endforeach; 
 $args = array(
     'numberposts'	=> 1,
     'posts_per_page' => 1,
     'post_type'		=> 'coordenadores',
-    'tax_query' => array(
+    'meta_query' => array(
+        'relation' => 'AND',
         array(
-        'taxonomy' => 'area',
-        'field' => 'name',
-        'terms'    => $tipo_formacao
+            'key' => 'tipo_formacao', 
+            'value' => $tipo_formacao_ID, 
+            'compare' => 'LIKE'
         ),
-    ),
+        array(
+            'key' => 'localizacao', 
+            'value' => $local_formacao_ID, 
+            'compare' => 'LIKE'
+        )
+    ),   
 );
 $the_query = new WP_Query( $args );
 
@@ -44,7 +61,7 @@ if( $the_query->have_posts() ):
 endif;
 wp_reset_query();	
 if ($environment != 'production') {
-    $avatar_colaborador = 'https://edit.com.pt/wp-content/uploads/2019/09/coordenador.jpg';
+    $avatar_colaborador = 'http://dev.edit.com.pt/wp-content/uploads/2019/09/coordenador.jpg';
 }
 
 $dia = date("j");
