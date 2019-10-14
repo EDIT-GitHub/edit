@@ -188,6 +188,7 @@ add_action('admin_bar_menu', 'preview_newsletter', 100);
 
 function wwp_custom_query_vars_filter($vars) {
     $vars[] .= 'n_name';
+    $vars[] .= 'n_email';
     return $vars;
 }
 add_filter( 'query_vars', 'wwp_custom_query_vars_filter' );

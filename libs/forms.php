@@ -993,7 +993,7 @@ function workshop_form() {
                                                             <tbody >
                                                                 <tr>
                                                                     <td valign="top" style="text-align:center;font-size: 14px; padding-bottom: 20px;font-family: Helvetica, Arial;font-weight: normal;font-style: normal;color: #8d8d8d;">
-                                                                    Se não pretendes receber emails como estes <a href="#" style="color: #8d8d8d;">clica aqui</a>.<br>
+                                                                    Se não pretendes receber emails como estes <a href="https://edit.com.pt/unsubscribe?n_email='.$_POST['email'].'" style="color: #8d8d8d;">clica aqui</a>.<br>
                                                                     © 2019 EDIT. - Disruptive Digital Education                                                                                
                                                                     </td>
                                                                 </tr>
