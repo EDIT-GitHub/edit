@@ -63,7 +63,8 @@ if( $the_query->have_posts() ):
         $nome_colaborador = get_the_title();
         $avatar_colaborador = get_field('avatar');
         $email_colaborador = get_field('email');
-        $telefone_colaborador = get_field('telefone');                               
+        $telefone_colaborador = get_field('telefone');  
+        $funcao_colaborador = get_field('funcao_colaborador');                                
     endwhile;
 endif;
 wp_reset_query();	
@@ -351,7 +352,7 @@ $pronta_enviar = get_field('pronta_a_enviar', $post_id);
                                                                                                          </tr>
                                                                                                          <tr>
                                                                                                              <td valign="top" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">
-                                                                                                                Coordernadora
+                                                                                                             '.$funcao_colaborador.'   
                                                                                                              </td>                                                                                                                                                    
                                                                                                          </tr>
                                                                                                      </tbody>
