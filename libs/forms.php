@@ -532,10 +532,16 @@ function workshop_form() {
                                                                     foreach($blocos_stories as $blocos_storie){
                                                                     $tipo_bloco =  $blocos_storie['tipo_de_bloco'];
                                                                                 
-                                                                        foreach($tipo_bloco as $tipos_blocos){
-                                                                        $texto = $tipos_blocos['texto'];                     
-                                                                        $var = explode('.', strip_tags($texto));
-                                                                        $short_text = $var[0];
+                                                                        foreach($tipo_bloco as $tipos_blocos ){
+                                                                            $tipos_blocos['acf_fc_layout'];
+                                                                            
+                                                                            if ($tipos_blocos['acf_fc_layout'] == 'texto_noticias') {
+                                                                            
+                                                                                $texto .= $tipos_blocos['texto'];                     
+                                                                                $var = explode('.', strip_tags($texto));
+                                                                                $short_text = array_slice($var, 0, 2);
+                                                                                
+                                                                            }
                                                                         }
                                                                     }
                                                                    
@@ -565,7 +571,7 @@ function workshop_form() {
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td valign="top" style="padding:30px 40px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: 1.56;letter-spacing: normal;color: #8d8d8d;">                                                                                
-                                                                                            '.strip_tags($short_text).'.
+                                                                                        '.$short_text[0].'.
                                                                                         </td> 
                                                                                     </tr>
                                                                                     <tr>
