@@ -679,7 +679,7 @@ function workshop_form() {
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td valign="top" style="font-family: Helvetica, Arial;padding-bottom: 10px;color: '.$cor_formacao.';font-size: 20px;font-weight: normal;">
-                                                                                                        '.$title_formacao.'
+                                                                                                        <div style="min-height:70px;">'.$title_formacao.'</div>
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
@@ -688,7 +688,7 @@ function workshop_form() {
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td valign="top" style="padding-top: 25px;font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;">
+                                                                                                    <td valign="top" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;">
                                                                                                         <a href="'.$link_formacao.'" style="font-family: Helvetica, Arial;font-size: 16px;font-weight: normal;text-decoration: none;color:#000000;"><span style=" color: #8d8d8d;">•</span> Mais informações</a>
                                                                                                     </td>                                                                                                                                                    
                                                                                                 </tr>
