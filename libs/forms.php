@@ -209,6 +209,13 @@ function workshop_form() {
         $encode_post_id = $url_key.strtr(base64_encode($post_id), '+/=', '._-');
         $encode_url_name = strtr(base64_encode($name), '+/=', '._-');
 
+        $name_parts = explode(" ", $name);
+        $lastname = array_pop($name_parts);
+
+        $firstname = implode(" ", $name_parts);
+
+       
+
         if ($pronta_enviar == '1'){
         
 
@@ -275,7 +282,7 @@ function workshop_form() {
                 </style>
             </head>
             <body style="margin: 0;padding: 0;">
-            <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Olá '.$name.'.</div>
+            <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Olá '.$firstname.' '.$lastname.'.</div>
                 <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Obrigado pelo teu interesse no '.$tipo_formacao.' de '.$course.'.</div>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="background-color: #FFFFFF;">
                         <tr>
