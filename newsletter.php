@@ -123,6 +123,16 @@ if (isset($_GET['n_name'])){
     $decode_name = 'Ricardo Silva';
 }
 
+$name_parts = explode(" ", $decode_name);
+
+        if(count($name_parts) > 1) {
+            $firstname = $name_parts[0];
+            $lastname = array_pop($name_parts);
+        }else{
+            $firstname = $name;
+            $lastname = '';
+        }
+    
 $data_actual = $dia.' '.$mes_pt.', '.$ano;
 $pronta_enviar = get_field('pronta_a_enviar', $post_id);
  $email = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -270,7 +280,7 @@ $pronta_enviar = get_field('pronta_a_enviar', $post_id);
                                                      <tbody>
                                                          <tr>
                                                              <td style="padding-bottom: 70px; font-family: Helvetica, Arial;font-size: 45px;font-weight: normal;color:#FFFFFF;">
-                                                                Olá '.$decode_name.'
+                                                                Olá '.$firstname.' '.$lastname.'
                                                              </td>
                                                          </tr>
                                                      </tbody>
