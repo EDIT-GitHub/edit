@@ -212,7 +212,7 @@ function workshop_form() {
         $name_parts = explode(" ", $name);
         $lastname = array_pop($name_parts);
 
-        $firstname = implode(" ", $name_parts);
+        $firstname = $name_parts[0];
 
        
 
