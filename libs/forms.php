@@ -366,7 +366,7 @@ function workshop_form() {
                                                             <tbody>
                                                                 <tr>
                                                                     <td style="padding-bottom: 70px; font-family: Helvetica, Arial;font-size: 45px;font-weight: normal;color:#FFFFFF;">
-                                                                        Olá '.$name.'
+                                                                        Olá '.$firstname.' '.$lastname.'
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
