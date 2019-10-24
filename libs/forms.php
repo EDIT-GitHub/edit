@@ -210,10 +210,14 @@ function workshop_form() {
         $encode_url_name = strtr(base64_encode($name), '+/=', '._-');
 
         $name_parts = explode(" ", $name);
-        $lastname = array_pop($name_parts);
 
-        $firstname = $name_parts[0];
-
+        if(count($name_parts) > 1) {
+            $firstname = $name_parts[0];
+            $lastname = array_pop($name_parts);
+        }else{
+            $firstname = $name;
+            $lastname = '';
+        }
        
 
         if ($pronta_enviar == '1'){
