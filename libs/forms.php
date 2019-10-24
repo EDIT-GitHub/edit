@@ -275,6 +275,7 @@ function workshop_form() {
                 </style>
             </head>
             <body style="margin: 0;padding: 0;">
+                <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">'.$tipo_formacao.' de '.$course.'.</div>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="background-color: #FFFFFF;">
                         <tr>
                             <td align="center" valign="top">
