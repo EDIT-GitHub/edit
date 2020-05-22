@@ -278,7 +278,7 @@ $slider = get_posts( $arguments );
                     <h3>Cursos Intensivos</h3>
                 </div>
             </a>
-            <a href="/formacao/?inputCursos=33782" class="slider-interface-item pos-graduacao">
+            <a href="/formacao/?inputCursos=41794" class="slider-interface-item pos-graduacao">
                 <div class="image">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.95 137.01">
                         <g data-name="Layer 2">
@@ -288,7 +288,7 @@ $slider = get_posts( $arguments );
                     </svg>
                 </div>
                 <div class="text">
-                    <h3>Pós-Graduações</h3>
+                    <h3>Remote Learning</h3>
                 </div>
             </a>
             <a href="/formacao/?inputCursos=60" class="slider-interface-item workshops">

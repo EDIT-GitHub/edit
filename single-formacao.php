@@ -16,6 +16,12 @@ if(!isset($headers['Custom-Ajax-Request'])){?>
 <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+<script>
+        window.onload = function() {
+            var layer = document.getElementById("loaderLayer")
+            layer.className = 'remove'; 
+        }
+        </script>
 <div id="container">
 
     <?php

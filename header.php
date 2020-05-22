@@ -37,6 +37,7 @@
         }(window, document, 'script', 'ga'));
         ga('create', 'UA-23379783-1', 'auto'); ga('require', 'displayfeatures'); ga('send', 'pageview');
       </script>
+     
       <!-- Facebook Pixel Code -->
       <script>
         !function (f, b, e, v, n, t, s) {
@@ -73,6 +74,34 @@
         </noscript>
         <!-- End LinkedIn conversion tracking -->
       <?php endif; ?>
+      <?php  
+        if (get_the_ID()==41891){
+      ?>
+      <style>
+      .slider.default .slider-description .title, .slider.default .slider-description a.summary h1, .slider.default .slider-description h1{
+          color: var(--pos-graduacao);
+      }
+      .block-text-and-image .image.small-square:after,
+      .block-text-and-image .image.big-square:after{
+            background-color: rgba(0,158,255,.7);
+      }
+      .block-text-and-image a,
+      .block-text-and-text .block-info .download-btn:hover p{
+          color: var(--pos-graduacao);
+      }
+      .block-text-and-text .block-info .download-btn .icon-pdf {
+        background: url(http://edit.com.pt/wp-content/themes/edit/dist/images/assets/docs.png) no-repeat;
+        background-size: 77px;
+        }
+      </style>
+      <?php } ?>
+      <?php 
+      $post_type = get_post_type( $post->ID );
+        if ($post_type=='formacao'){
+        ?>
+
+      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+      <?php } ?>
     </head>
     <body <?php body_class(); ?>>
       <div id="loaderLayer">

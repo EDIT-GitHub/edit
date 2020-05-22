@@ -95,11 +95,17 @@ function workshop_form() {
        
         
         $tipo_formacao = get_field('tipo_formacao', $post_id);        
-
+        $tipo_formacao_remote = false;
+        
         foreach( $tipo_formacao as $p2):
             $tipo_formacao = get_the_title($p2->ID);
             $tipo_formacao_ID = $p2->ID;
+            if ($tipo_formacao=='Remote Learning'){
+                $tipo_formacao_title = 'formação';
+                $tipo_formacao_remote = true;
+            }
         endforeach; 
+        $tipo_formacao_assunto = $tipo_formacao;
 
         $local_formacao = get_field('localizacao', $post_id);        
 
@@ -109,10 +115,12 @@ function workshop_form() {
         
         $environment = ENVIRONMENT;
         if ($environment == 'production') {
-            if ($tipo_formacao=='Workshop'){
+            if ($tipo_formacao=='Workshop' && $tipo_formacao_remote!= true){
                 $emailsWorkshopForm = 'geral@edit.com.pt,noemi.lomelino@edit.com.pt,emanuel.soares@edit.com.pt';
+            }elseif ($tipo_formacao_remote== true){
+                $emailsWorkshopForm = 'geral@edit.com.pt, elsa.oliveira@edit.com.pt, emanuel.soares@edit.com.pt';
             }else{
-                $emailsWorkshopForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, joana.morujo@edit.com.pt';
+                $emailsWorkshopForm = 'geral@edit.com.pt, joana.morujo@edit.com.pt, eva.pinho@edit.com.pt';
             }
             if ($emailPost=='afbbento@gmail.com'){
                 $emailsWorkshopForm = 'afbbento@gmail.com';
@@ -286,8 +294,8 @@ function workshop_form() {
                 </style>
             </head>
             <body style="margin: 0;padding: 0;">
-            <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Olá '.$firstname.' '.$lastname.'.</div>
-                <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Obrigado pelo teu interesse no '.$tipo_formacao.' de '.$course.'.</div>
+            <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Olá '.$firstname.'!</div>
+                <div style="display:none;font-size:0;line-height:0;max-height:0;mso-hide:all">Obrigado pelo teu interesse no '.$tipo_formacao.' de '.strip_tags($course).'. Partilhamos contigo as nossas novidades.</div>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="background-color: #FFFFFF;">
                         <tr>
                             <td align="center" valign="top">
@@ -1188,16 +1196,16 @@ Portugal <br />
 </p>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 <b>EDIT. Porto</b> <br />
-Rua Gonçalo Cristovão <br />
-nº 347, 3º Piso, Sala 302 e 309 <br />
-4000-270, Porto <br />
+Rua Alferes Malheiro <br />
+nº 226, <br />
+4000-057, Porto <br />
 Portugal <br />
 </p>
 </p>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 <b>EDIT. Madrid</b> <br />
-Calle de la Colegiata 9, utopic_US <br />
-28012 Madrid <br />
+Calle Gran Vía, <br />
+4, 28013 Madrid <br />
 Espanha <br />
 </p>
 </td>
@@ -1394,7 +1402,7 @@ Url: '. $url.'<br/>'.
 </html>';
 
 
-wp_mail($emailsWorkshopForm, $tipo_formacao_title." ".strip_tags($course). " ".$local, $emailEdit);
+wp_mail($emailsWorkshopForm, $tipo_formacao_assunto." ".strip_tags($course). " ".$local, $emailEdit);
 remove_filter ( 'wp_mail_content_type', 'set_html_content_type' );
 }
 
@@ -2625,16 +2633,16 @@ Portugal <br />
 </p>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 <b>EDIT. Porto</b> <br />
-Rua Gonçalo Cristovão <br />
-nº 347, 3º Piso, Sala 302 e 309 <br />
-4000-270, Porto <br />
+Rua Alferes Malheiro <br />
+nº 226, <br />
+4000-057, Porto <br />
 Portugal <br />
 </p>
 </p>
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;line-height:normal;color:#333;">
 <b>EDIT. Madrid</b> <br />
-Calle de la Colegiata 9, utopic_US <br />
-28012 Madrid <br />
+Calle Gran Vía, <br />
+4, 28013 Madrid <br />
 Espanha <br />
 </p>
 </td>
@@ -3566,7 +3574,7 @@ function info_form() {
 
     $environment = ENVIRONMENT;
     if ($environment == 'production') {
-        $emailsInfoForm = 'geral@edit.com.pt, eva.pinho@edit.com.pt, joana.morujo@edit.com.pt';
+        $emailsInfoForm = 'geral@edit.com.pt, elsa.oliveira@edit.com.pt, emanuel.soares@edit.com.pt';
     } else {
         $emailsInfoForm = 'afbbento@gmail.com';
     }

@@ -166,3 +166,172 @@
       }
    }
  
+@media screen and (max-width: 500px){
+    .block-full[data-old=block-full].blog .block-content .image img{
+        transform: none;
+    }
+    .block-full[data-old=block-full] .block-content .image img{
+        left: 0;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .block-full[data-old=block-full] .block-content .image{
+        height: auto;
+        padding-bottom: 0;
+    }
+    
+}
+
+.page-edit-remote-learning .block-info .icon.icon-pdf{
+    float: left;
+    background: url(https://edit.com.pt/wp-content/themes/edit/dist/images/assets/docs.png) no-repeat;
+    background-size: 77px;
+    width: 74px;
+    height: 50px;
+    margin-right: -26px;
+}
+.page-edit-remote-learning .block-info .download-btn .info {
+    float: left;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.page-edit-remote-learning .block-info .download-btn .info .text-apresentacao {
+    font-size: 13px;
+    line-height: 15px;
+    color: #666;
+    font-family: robotoBoldCond;
+    text-transform: uppercase;
+}
+.page-edit-remote-learning .block-info .download-btn .info .text-download {
+    font-family: NeuzeitSLTW01-BookHeavy;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    transition: color .2s;
+    text-transform: uppercase;
+}
+.page-edit-remote-learning .block-info .download-btn {
+    display: block;
+    margin-top: 30px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.block-formacao-info .curso .info span.red {
+    color: red !important;
+}
+
+.page-edit-remote-learning .block-mais-info {
+    margin-top: 80px;
+}
+
+.active-swiper{z-index:999 !important;}
+
+.block-formacao-info .curso.pos-graduacao .block-info svg{
+        
+}
+.block-formacao-info .curso.pos-graduacao .block-info:nth-child(2) .tooltip-remote span{
+    content: 'GMT Lisbon';
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -35px;
+    left: calc(100% - 40px);
+    font-family: robotoBoldCond;
+    font-weight: 700;
+    font-size: 11px;
+    width: 70px;
+    color: #FFFFFF;
+    height: 23px;
+    padding: 1px 6px;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--pos-graduacao);
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.tooltip-remote{
+    position: absolute;
+    top: 7px;
+    right: -21px;
+}
+.block-formacao-info .curso.pos-graduacao .block-info:nth-child(2) .tooltip-remote span::after{
+    width: 0;
+    content: '';
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--pos-graduacao);
+    position: absolute;
+    left: calc(50% - 10px);
+    top: 18px;
+}
+
+.block-formacao-info .curso.pos-graduacao .block-info:nth-child(2) .info:hover .tooltip-remote span{
+    visibility: visible;
+    transition: visibility 0s linear 0s, opacity 300ms;
+    opacity: 1;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .tooltip-remote {
+        position: absolute;
+        top: 4px;
+        right: -21px;
+    }
+    .block-formacao-info .curso.pos-graduacao .block-info:nth-child(2) .tooltip-remote span{
+        padding: 4px 7px;
+    }
+
+}
+
+@media only screen and (max-width: 700px) and (min-width: 469px){
+    .tooltip-remote {
+        position: relative;
+        right: 0px;
+    }
+    .block-formacao-info .curso.pos-graduacao .block-info:nth-child(2) .tooltip-remote span{
+        top: -2px;
+        left: calc(31px);
+    }
+    .block-formacao-info .curso.pos-graduacao .block-info:nth-child(2) .tooltip-remote span::after{
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-right: 6px solid var(--pos-graduacao);
+        left: -14px;
+        top: 3px;
+    }
+    
+
+}
+.bloco-images .swiper-button-next:after, 
+.bloco-images .swiper-button-prev:after {
+    font-size: 29px !important;
+}
+.slider-images {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+.slide-image {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}

@@ -442,7 +442,7 @@ var sliderProgram = new Swiper('.slider-program', {
 	wrapperClass: 'slider-wrapper',
 	slideClass: 'frame',
 	effect: 'fade',
-	slideActiveClass: 'active',
+	slideActiveClass: 'active-swiper',
 	slidesPerView: '1',
 	loop: 'true',
 	navigation: {
@@ -460,6 +460,21 @@ var sliderProgram = new Swiper('.slider-program', {
   	},
 });
 
+var sliderImages = new Swiper('.slider-images',{
+    wrapperClass: 'swiper-wrapper',
+    slideClass: 'swiper-slide',
+    effect: 'fade',
+    loop: 'true',
+    slidesPerView: '1',
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	}
+});
 
 </script>
 <?php if (LANGUAGE == 'PT'): ?>
@@ -472,7 +487,15 @@ var sliderProgram = new Swiper('.slider-program', {
 	var newsletterN = '<?php echo wp_create_nonce("Edit Nonce Newsletter Form");?>';
 </script>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23379783-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-23379783-1');
+</script>
 </body>
 
 </html>

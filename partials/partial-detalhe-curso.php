@@ -81,6 +81,17 @@ endif;
 						<input id="telefone" name="telefone" maxlength="14" data-type="phone" type="text" placeholder="+351 000 000 000" />
 						<input id="pais" name="pais" data-type="text" type="text" placeholder="PAÍS" />
 						<input id="cidade" name="cidade" data-type="text" type="text" placeholder="CIDADE" />
+                        <div id="localizacaoContainer" style="margin-bottom: 20px;" class="filters-holder">
+						    <div class="filter">
+							    <select id="nl_localizacao" data-exterior-label="Localização" name="localizacao">
+								    <option value><?php dictionary("Localizacao") ?></option>
+									<option value="Lisboa">Lisboa</option>
+									<option value="Porto">Porto</option>
+									<option value="Madrid">Madrid</option>
+                                    <option value="S�o Paulo">S�o Paulo</option>
+                                </select>
+							</div>
+						</div>
 						<textarea name="message" id="message" placeholder="Mensagem"></textarea>
 						<div class="content-radio interests">
 							<label class="area-label">Interesses</label>
@@ -148,6 +159,42 @@ endif;
 </form>
 </div>
 <script>
+    jQuery(document).ready(function ($) {
+        jQuery('.btn-submit .btn-icon').click(function (e) {
+           var myVar = setInterval(myTimer, 500);
+           console.log("send event before");
+            //ga('send', 'event', 'more', 'click','test');
+            console.log("send event after");
+            function myTimer() {
+                var el = jQuery('.btn-submit .btn-icon').hasClass( "success" );
+
+                console.log(el);
+                if (el == true){
+                    window.location.hash = 'obrigado';
+                    clearInterval(myVar);
+                }
+            }
+        });
+        jQuery('.block-formacao-info.form-content > div').click(function (e) {
+            window.location.hash = 'pedido-de-informacao';
+            gtag('event', "click", {
+					  'event_category': "form",
+					  'event_label': "<?php echo (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>#pedido-de-informacao",
+					  'value': "info"
+					});
+					console.log("send ga open");
+            });
+
+        jQuery('.slider.form .form-content > div').click(function (e) {
+            window.location.hash = '';
+            gtag('event', "click", {
+					  'event_category': "form",
+					  'event_label': "close",
+					  'value': "info"
+					});
+					console.log("send ga close");
+        });
+    });
 	var success = 'sucesso';
 	var sending = 'a enviar';
 	var cursoN = '<?php echo wp_create_nonce("edit Nonce Registration Form"); ?>';
@@ -212,11 +259,17 @@ endif;
 									<div class="icon icon-data"></div>
 									<div class="info">
 										<?php
-										$subtitulo = get_sub_field('info_titulo');
+                                        
+										if ($tipoFormacao->post_title=='Remote Learning'){
+                                            $svg_info = '<div class="tooltip-remote"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14px" height="14px"><path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"/></svg><span>GMT Lisbon</span></div>';
+                                        }else{
+                                            $svg_info ='';
+                                        }
+                                        $subtitulo = get_sub_field('info_titulo');
 										if($end || $subtitulo == NULL) { ?>
-											<p>A definir</p>
+											<p>A definir <?php echo $svg_info; ?></p>
 										<?php } else { ?>
-											<p><?php the_sub_field('info_titulo') ?></p>
+											<p><?php the_sub_field('info_titulo') ?> <?php echo $svg_info; ?></p>
 										<?php } ?>
 										<span>
 											<?php the_sub_field('info_descricao') ?>

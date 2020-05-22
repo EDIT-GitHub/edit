@@ -23,14 +23,23 @@ $tipo_formacao = get_field('tipo_formacao', $post_id);
 
 foreach( $tipo_formacao as $p2):
     $tipo_formacao = get_the_title($p2->ID);
+    if ($tipo_formacao=='Remote Learning'){
+        $tipo_formacao_title = 'formação';
+    }
 endforeach; 
 
 $course = get_field('titulo', $post_id); 
 $tipo_formacao = get_field('tipo_formacao', $post_id);        
 
+        $tipo_formacao_remote = false;
+
         foreach( $tipo_formacao as $p2):
             $tipo_formacao = get_the_title($p2->ID);
             $tipo_formacao_ID = $p2->ID;
+            if ($tipo_formacao=='Remote Learning'){
+                $tipo_formacao_title = 'formação';
+                $tipo_formacao_remote = true;
+            }
         endforeach; 
 
         $local_formacao = get_field('localizacao', $post_id);        
@@ -38,6 +47,10 @@ $tipo_formacao = get_field('tipo_formacao', $post_id);
         foreach( $local_formacao as $p2):
             $local_formacao_ID = $p2->ID;
         endforeach; 
+
+       
+     
+        
 $args = array(
     'numberposts'	=> 1,
     'posts_per_page' => 1,
@@ -320,7 +333,7 @@ $pronta_enviar = get_field('pronta_a_enviar', $post_id);
                                                      <tbody >
                                                          <tr>
                                                              <td style="padding: 35px 80px 0;font-family: Helvetica, Arial;color: #8d8d8d;font-size: 16px;font-weight: normal;" class="content-wrapper">
-                                                                Obrigado pelo teu interesse no '.$tipo_formacao.' de '.$course.'.
+                                                                Obrigado pelo teu interesse no '.$tipo_formacao_title.' de '.strip_tags($course).'.
                                                                  <br><span style="color:#000000">Iremos entrar em contacto contigo durante as próximas 48 horas úteis.</span>
                                                                  <br><br>                                                               
                                                                  Entretanto caso necessites de algum esclarecimento não hesites em entrar em contacto comigo.
@@ -573,7 +586,15 @@ $pronta_enviar = get_field('pronta_a_enviar', $post_id);
                                                                                      $tipo_formacao_title = get_the_title($p2->ID);
                                                                                  endforeach;
                                                                                  
+                                                                                 if ($tipo_formacao_remote==true){
+                                                                                    $tipo_formacao_title = 'Remote Learning';
+                                                                                 }
+
                                                                                  switch ($tipo_formacao_title) {
+                                                                                     case 'Remote Learning':
+                                                                                         $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/remote.png';
+                                                                                         $cor_formacao = '#009eff';
+                                                                                         break;
                                                                                      case 'Workshop':
                                                                                          $logo_formacao = 'https://edit.com.pt/wp-content/themes/edit/newsletter-edit/workshop.png';
                                                                                          $cor_formacao = '#65c4b3';

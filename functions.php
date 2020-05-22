@@ -192,4 +192,22 @@ function wwp_custom_query_vars_filter($vars) {
     return $vars;
 }
 add_filter( 'query_vars', 'wwp_custom_query_vars_filter' );
+
+add_filter( 'body_class', 'sk_body_class_for_pages' );
+/**
+ * Adds a css class to the body element
+ *
+ * @param  array $classes the current body classes
+ * @return array $classes modified classes
+ */
+function sk_body_class_for_pages( $classes ) {
+
+	if ( is_singular( 'page' ) ) {
+		global $post;
+		$classes[] = 'page-' . $post->post_name;
+	}
+
+	return $classes;
+
+}
 ?>

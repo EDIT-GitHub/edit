@@ -971,6 +971,31 @@ if(have_rows('blocos')):
                                 </div>
                                 <?php
                                 break;
+                                case 'bloco_slider_imagens':
+                                
+                                ?>
+                                <div class="block-formacao-info bloco-images">
+                                    <div class="grid-cont text">
+                                        <div class="slider-images">
+                                            <div class="swiper-wrapper">
+                                            <?php
+                                            if(have_rows('galeria_imagens')){
+                                                while ( have_rows('galeria_imagens') ) {
+                                                the_row();
+                                            ?>
+                                               
+                                            <!-- Swiper -->
+                                            <div class="swiper-slide"><img src="<?php echo the_sub_field('imagem_galeria');?>"></div>
+                                                <?php } ?>
+                                            <?php }?>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                    </div>
+                                </div>
+                                <?php
+                                break;
                                 case 'titulo_evento':
                                 ?>
                                 <div class="block-text <?php get_sub_field('margem') == 'nenhuma' ? ' ' : the_sub_field('margem') ?>">

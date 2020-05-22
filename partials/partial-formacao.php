@@ -198,7 +198,7 @@ if(isset($_REQUEST['inputLocalizacao'])) {
                     'post_type'        => 'localizacoes',
                     'post_mime_type'   => '',
                     'post_parent'      => '',
-                    'post_status'      => '',
+                    'post_status'      => array('publish', 'draft'),
                     'suppress_filters' => '0'
                 );
                 $localizacoes = get_posts( $arguments );

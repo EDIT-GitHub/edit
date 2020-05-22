@@ -11,11 +11,22 @@ $servicesEnpoint = "/results/equipa/";
 //}
 ?>
 <?php the_field('tracking_code'); ?>
-<div class="content">
+<?php  if(get_the_ID()=='41891'){
+            $remote_page = 'page-edit-remote-learning';
+        }; 
+
+?>
+<div class="content <?php echo $remote_page; ?>">
     <?php
     if(get_field('formulario_mais_info')):
         ?>
         <!-- FORM MODAL MODULE -->
+        <script>
+        window.onload = function() {
+            var layer = document.getElementById("loaderLayer")
+            layer.className = 'remove'; 
+        }
+        </script>
         <div class="slider form flex full curso evento js-formmodal">
             <input type="hidden" id="idCurso" value="" />
             <div class="form-content">
@@ -408,6 +419,11 @@ case 'bloco_video':
     if($mainBlockCss == 'block-text-and-text'){
         $squareClass = 'has-square';
     }
+    if (get_the_ID()==41891){
+        $squarecolor = '#009eff';
+    }else{
+        $squarecolor = '#f2d31f';
+    }
     ?>
     <div class="<?php echo $mainBlockCss; ?> <?php get_sub_field('margem') == 'nenhuma' ? ' ' : the_sub_field('margem') ?> <?php echo $leftCss; ?> <?php echo $squareClass; ?>">
         <div class="grid-cont">
@@ -418,7 +434,7 @@ case 'bloco_video':
                             <div class="square">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve">
-                                <polygon fill="#f2d31f" points="35,0 0,0 0,20 0,90 22,90 22,87 3,87 3,3 87,3 87,20 90,20 90,0 " />
+                                <polygon fill="<?php echo $squarecolor; ?>" points="35,0 0,0 0,20 0,90 22,90 22,87 3,87 3,3 87,3 87,20 90,20 90,0 " />
                             </svg>
 
                         </div>
@@ -715,6 +731,11 @@ endswitch;
 
 <?php
 endwhile;
+endif;
+?>
+<?php
+if (get_field('artigos_relacionados')):
+	get_template_part('partials/partial', 'artigos-relacionados');
 endif;
 ?>
 <?php if(get_field('formulario_mais_info')):?>

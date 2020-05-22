@@ -241,9 +241,9 @@ Descárgate aquí el PDF informativo: <a href="http://www.edit.com.es/pdfs/edit-
 
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\', Verdana,Arial,sans-serif; font-size: 14px;color:#333;">
 <b>EDIT. Madrid</b> <br />
-Calle de la Collegiata, 9 <br />
-28012, Madrid <br />
-España <br />
+Calle Gran Vía, <br />
+4, 28013 Madrid <br />
+Espanha <br />
 </p>
 
 
@@ -688,8 +688,8 @@ Thanks.
 
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;color:#333;">
 <b>EDIT. Madrid</b> <br />
-Calle de la Colegiata 9, utopic_US <br />
-28012 Madrid <br />
+Calle Gran Vía, <br />
+4, 28013 Madrid <br />
 Espanha <br />
 </p>
 </td>
@@ -2240,9 +2240,9 @@ Si tienes alguna duda, contáctanos de lunes a viernes, desde las 10h hasta las 
 
 <p style="width: 560px; margin: 1em 0; font-family:\'Lucida Sans\',Verdana,Arial,sans-serif; font-size: 14px;color:#333;">
 <b>EDIT. Madrid</b> <br />
-Calle de la Colegiata<br />
-9, Utopics_us<br />
-28012 Madrid <br />
+Calle Gran Vía, <br />
+4, 28013 Madrid <br />
+Espanha <br />
 </p>
 </td>
 <td width="70"></td>

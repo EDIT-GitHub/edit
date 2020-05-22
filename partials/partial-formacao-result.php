@@ -69,11 +69,15 @@ if(isset($_REQUEST['inputCursos'])) {
         break;
         case 'workshop':
         case '60':
-        $tipo = '60';
+        $tipo = '60, 62';
         break;
         case 'International Workshops':
         case '62':
         $tipo = '62';
+        break;
+        case 'remote-learning':
+        case '41794':
+        $tipo = '41794';
         break;
         default:
         $tipo = $tipoRaw;
@@ -184,14 +188,33 @@ if(isset($_REQUEST['inputLocalizacao'])) {
 
 if(isset($_REQUEST['pagenumber'])) {
     if($tipo != '0' && $tipo != '' && $tipo != '62'):
-        array_push(
-            $meta_query,
-            array(
-                'key' => 'tipo_formacao', // name of custom field
-                'value' => '"' . $tipo . '"',
-                'compare' => 'LIKE'
-            )
-        );
+        if ($tipo=='60'){
+            array_push(
+                $meta_query,
+                array('relation' => 'OR',
+                    array(
+                        'key' => 'tipo_formacao', // name of custom field
+                        'value' => '"' . $tipo . '"',
+                        'compare' => 'LIKE'
+                    ),
+                    array(
+                        'key' => 'tipo_formacao', // name of custom field
+                        'value' => '"62"',
+                        'compare' => 'LIKE'
+                    )
+                )
+            );
+        }else{
+            array_push(
+                $meta_query,
+                array(
+                    'key' => 'tipo_formacao', // name of custom field
+                    'value' => '"' . $tipo . '"',
+                    'compare' => 'LIKE'
+                )
+            );
+        }
+        
     endif;
 
     if($tipo == '62'):
@@ -394,8 +417,11 @@ $args = array(
 }
 ?>
 <?php
+
 $myposts = get_posts( $args );
+
 if ($myposts):
+//echo $wpdb->last_query;
     ?>
     <?php    
     foreach ( $myposts as $post ) :
@@ -403,7 +429,7 @@ if ($myposts):
         
         //Tipo de formacao
         $tipoFormacao = get_field('tipo_formacao');
-
+        //print_r($post);
         $tipoFormacao =$tipoFormacao[0];//First
         $tipoHorario = get_field('horario');
         $tipoHorario =$tipoHorario[0];//First
@@ -439,6 +465,7 @@ if ($myposts):
         }
 
         //Colocar data a definir/TBA quando ultrapassa o dia da formação
+        
         $dataInicio = get_field('home_data', false, false);
         $end = false;
         if($dataInicio != false):
